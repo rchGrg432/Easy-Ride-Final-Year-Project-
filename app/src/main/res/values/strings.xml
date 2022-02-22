@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EasyRide</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="login">Login</string>
+    <string name="email_id">email </string>
+    <string name="forget">Forget ?</string>
+    <string name="name"> name</string>
+    <string name="birth"> date of birth </string>
+    <string name="password">password</string>
+    <string name="number"> mobile number </string>
+
+
+    <string name="sign_up">Register</string>
+
+
+    <!--    sharedpref keys-->
+    <string name="isLoggedKey">isl</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="wishlist">WishList</string>
+    <string name="profile">Profile</string>
+
+    <string name="isLogged" translatable="false">issl</string>
+    <string name="api_key" translatable="false">apk</string>
+    <string name="email_key" translatable="false">ek</string>
+    <string name="name_key" translatable="false">nk</string>
+    <string name="created_key" translatable="false">ck</string>
+</resources>

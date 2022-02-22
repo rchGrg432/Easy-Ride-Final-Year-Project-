@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_ten">10dp</dimen>
+    <dimen name="margin_thirty">30dp</dimen>
+    <dimen name="margin_fifty">50dp</dimen>
+    <dimen name="margin_twenty">20dp</dimen>
+    <dimen name="normaLspacing">14dp</dimen>
+    <dimen name="largeSpacing">20dp</dimen>
+    <dimen name="smallSpacing">5dp</dimen>
+
+    <!--    for text sizes-->
+    <dimen name="text_sixteen">16sp</dimen>
+    <dimen name="text_eighteen">18sp</dimen>
+</resources>
