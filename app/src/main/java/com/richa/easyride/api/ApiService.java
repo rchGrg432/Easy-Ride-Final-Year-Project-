@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -24,9 +25,13 @@ public interface ApiService {
     @GET("api/v1/get-all-cycle")
     Call<CycleResponse> getAllCycles();
 
+    @FormUrlEncoded
+    @POST("/api/v1/cart")
+    Call<RegisterResponse> addToCart(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+
     @GET("api/v1/get-categories")
     Call<CategoryResponse> getCategories();
 
-    @GET("api/v1/get-products-by-category")
-    Call<CycleResponse> getProductsByCategory(@Query("category_id") int catID);
+    @GET("api/v1/get-cycle-by-category")
+    Call<CycleResponse> getCyclesByCategory(@Query("c_id") int catID);
 }

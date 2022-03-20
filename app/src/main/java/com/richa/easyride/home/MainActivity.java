@@ -4,19 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.richa.easyride.R;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.richa.easyride.home.fragments.CartFragment;
+import com.richa.easyride.home.fragments.CategoryFragment;
 import com.richa.easyride.home.fragments.home.HomeFragment;
 import com.richa.easyride.home.fragments.ProfileFragment;
 import com.richa.easyride.home.fragments.RentalFragment;
-import com.richa.easyride.home.fragments.WishFragment;
 
 public class MainActivity extends AppCompatActivity {
     //Declaration variable
     MeowBottomNavigation bottomNavigation;
+    HomeFragment homeFragment;
 
 
     @Override
@@ -26,13 +27,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Assign variable
         bottomNavigation = findViewById(R.id.bottom_nav);
-
+        bottomNavigation.show(1, true);
 
         //Add menu item
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.bicycle));
-        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_heart));
-        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_profile));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.category));
+        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.bicycle));
+        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.cart));
+        bottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_profile));
+
+
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -47,17 +51,26 @@ public class MainActivity extends AppCompatActivity {
                         //Initialize rental fragment
                         fragment = new HomeFragment();
                         break;
+
                     case 2:
+                        //When id is 2
+                        //Initialize home fragment
+                        fragment = new CategoryFragment();
+                        break;
+
+                    case 3:
                         //When id is 2
                         //Initialize home fragment
                         fragment = new RentalFragment();
                         break;
-                    case 3:
+
+                    case 4:
                         //when id is 3
                         //initialize about wish list fragment
-                        fragment = new WishFragment();
+                        fragment = new CartFragment();
                         break;
-                    case 4:
+
+                    case 5:
                         fragment = new ProfileFragment();
                         break;
                 }
@@ -66,18 +79,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set notification count
-        bottomNavigation.setCount(1, "10");
-        //Set home fragment initially selected
-        bottomNavigation.show(1, true);
+
 
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 //Display toast
-                Toast.makeText(getApplicationContext()
-                        , "You Clicked" + item.getId()
-                        , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext()
+//                        , "You Clicked" + item.getId()
+//                        , Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -85,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
                 //Display toast
-                Toast.makeText(getApplicationContext()
-                        , "You Reselected " + item.getId()
-                        , Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext()
+//                        , "You Reselected " + item.getId()
+//                        , Toast.LENGTH_SHORT).show();
             }
         });
     }

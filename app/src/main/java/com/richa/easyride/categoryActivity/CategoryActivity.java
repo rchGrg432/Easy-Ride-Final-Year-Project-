@@ -50,7 +50,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void getCategoryOnline() {
         toggleLoading(true);
-        Call<CycleResponse> getProductsByCategory = ApiClient.getClient().getProductsByCategory(category.getCategoryId());
+        Call<CycleResponse> getProductsByCategory = ApiClient.getClient().getCyclesByCategory(category.getCategoryId());
         getProductsByCategory.enqueue(new Callback<CycleResponse>() {
             @Override
             public void onResponse(Call<CycleResponse> call, Response<CycleResponse> response) {
@@ -91,7 +91,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void showCategoriesProducts(List<Cycle> products) {
         allProductsRV.setHasFixedSize(true);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
         allProductsRV.setLayoutManager(layoutManager);
         ShopAdapter shopAdapter = new ShopAdapter(products, this, false);
         allProductsRV.setAdapter(shopAdapter);

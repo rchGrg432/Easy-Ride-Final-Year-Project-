@@ -10,7 +10,8 @@
         android:layout_height="220dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="5dp"
-        app:cardPreventCornerOverlap="true">
+        app:cardPreventCornerOverlap="true"
+        android:layout_marginLeft="@dimen/margin_five">
 
         <RelativeLayout
             android:id="@+id/categoryItemRL"

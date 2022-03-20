@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.richa.easyride.R;
 import com.richa.easyride.api.response.Cycle;
-import com.richa.easyride.singleProductActivity.SingleProductActivity;
+import com.richa.easyride.singleProductPage.SingleProductActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

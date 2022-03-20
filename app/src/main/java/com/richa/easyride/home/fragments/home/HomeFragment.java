@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.richa.easyride.R;
 import com.richa.easyride.api.ApiClient;
 //import com.richa.easyride.home.fragments.home.adapters.CategoryAdapter;
@@ -39,6 +40,7 @@ public class HomeFragment extends Fragment {
     ProgressBar loadingProgress;
     TextView viewAllTV, userNameTV;
     ImageView profileIV;
+    MeowBottomNavigation bottomNavigation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +48,9 @@ public class HomeFragment extends Fragment {
         //Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+//    public void setBottomNav(MeowBottomNavigation bottomNavigation) {
+//        this.bottomNavigation = bottomNavigation;
+//    }
 
     @Override
     public void onViewCreated(@NonNull View view, @NonNull Bundle savedInstanceState) {
@@ -56,7 +61,12 @@ public class HomeFragment extends Fragment {
         viewAllTV = view.findViewById(R.id.viewAllTV);
         userNameTV = view.findViewById(R.id.userNameTV);
         profileIV = view.findViewById(R.id.profileIV);
-
+//        viewAllTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                bottomNavigation.show(2, true);
+//            }
+//        });
         serverCall();
         getCategoriesOnline();
 
