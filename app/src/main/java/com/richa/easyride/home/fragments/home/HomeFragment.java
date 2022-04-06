@@ -1,11 +1,15 @@
 package com.richa.easyride.home.fragments.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +28,16 @@ import com.richa.easyride.api.response.Category;
 import com.richa.easyride.api.response.CategoryResponse;
 import com.richa.easyride.api.response.Cycle;
 import com.richa.easyride.api.response.CycleResponse;
+import com.richa.easyride.home.SearchActivity;
 import com.richa.easyride.home.fragments.home.adapters.CategoryAdapter;
 import com.richa.easyride.home.fragments.home.adapters.ShopAdapter;
+import com.richa.easyride.profile.ProfileActivity;
 import com.richa.easyride.utils.DataHolder;
+import com.richa.easyride.utils.SharedPrefUtils;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,9 +46,11 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
-    TextView viewAllTV, userNameTV;
-    ImageView profileIV;
+    TextView viewAllTV, userNameTV, goSearch;
+//    ImageView profileIV;
     MeowBottomNavigation bottomNavigation;
+    CircleImageView profileImage;
+    LinearLayout searchLL;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,7 +70,9 @@ public class HomeFragment extends Fragment {
         loadingProgress = view.findViewById(R.id.loadingProgress);
         viewAllTV = view.findViewById(R.id.viewAllTV);
         userNameTV = view.findViewById(R.id.userNameTV);
-        profileIV = view.findViewById(R.id.profileIV);
+        profileImage = view.findViewById(R.id.profileImage);
+        goSearch = view.findViewById(R.id.goSearch);
+        searchLL = view.findViewById(R.id.searchLL);
 //        viewAllTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -69,8 +81,34 @@ public class HomeFragment extends Fragment {
 //        });
         serverCall();
         getCategoriesOnline();
+        profileOnClick();
+        getName();
+        getSearch();
 
+    }
 
+    private void getSearch() {
+        goSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void getName() {
+        userNameTV.setText(SharedPrefUtils.getString(getActivity(), getString(R.string.name_key)));
+    }
+
+    private void profileOnClick() {
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getCategoriesOnline() {
@@ -109,7 +147,7 @@ public class HomeFragment extends Fragment {
         categoryRV.setHasFixedSize(true);
         categoryRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         if (getActivity() != null) {
-            CategoryAdapter categoryAdapter = new CategoryAdapter(categories, getContext());
+            CategoryAdapter categoryAdapter = new CategoryAdapter(categories, getContext(), true, false, null);
             categoryRV.setAdapter(categoryAdapter);
 
         }

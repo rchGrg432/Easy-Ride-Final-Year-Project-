@@ -3,6 +3,8 @@ package com.richa.easyride.api.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Date;
+
 public class LoginResponse {
 
     @SerializedName("error")
@@ -20,9 +22,14 @@ public class LoginResponse {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
-    @SerializedName("message")
+    @SerializedName("contact")
     @Expose
-    private String message;
+    private String contact;
+
+    @SerializedName("dateofbirth")
+    @Expose
+    private String dateofbirth;
+
 
     public Boolean getError() {
         return error;
@@ -64,12 +71,21 @@ public class LoginResponse {
         this.createdAt = createdAt;
     }
 
-    public String getMessage() {
-        return message;
+    public String getContact() {
+        return contact;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
+
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
 
 }

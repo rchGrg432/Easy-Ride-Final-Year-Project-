@@ -1,5 +1,6 @@
 package com.richa.easyride.home.fragments.home.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -25,22 +26,28 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     List<Category> categories;
     LayoutInflater inflater;
     Context context;
+    Boolean showImage;
+    Boolean select ;
+    Activity activity;
 //    Boolean showImage;
 
-    public CategoryAdapter(List<Category> categories, Context context) {
+    public CategoryAdapter(List<Category> categories, Context context, Boolean showImage, Boolean select, Activity activity) {
         this.categories = categories;
         this.inflater = LayoutInflater.from(context);
         this.context = context;
+        this.showImage = showImage;
+        this.select = select;
+        this.activity = activity;
 //        this.showImage = showImage;
     }
 
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        if (showImage)
+        if (showImage)
             return new CategoryViewHolder(inflater.inflate(R.layout.item_category, parent, false));
-//        else
-//            return new CategoryViewHolder(inflater.inflate(R.layout.item_category_no_image, parent, false));
+        else
+            return new CategoryViewHolder(inflater.inflate(R.layout.item_category_no_image, parent, false));
     }
 
     @Override

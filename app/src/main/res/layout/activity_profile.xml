@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile.ProfileActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:padding="@dimen/normaLspacing"
+        android:background="@color/third">
+
+        <ImageView
+            android:id="@+id/gobackIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/largeSpacing"
+            android:elevation="10dp"
+            android:src="@drawable/ic_round_arrow_back_ios_new_24" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_twenty"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/primary" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/profile_image"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:src="@drawable/profile" />-->
+
+        <TextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_ten"
+            android:layout_toRightOf="@id/profile_image"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:text="Richa Gurung"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="richa_gurung"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:includeFontPadding="false"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_below="@id/full_name"
+            android:layout_marginLeft="@dimen/margin_ten"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_twenty"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="@dimen/normaLspacing"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/normaLspacing"
+                    android:src="@drawable/ic_baseline_person_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/margin_ten"/>
+
+                <EditText
+                    android:id="@+id/getNameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/normaLspacing"
+                    android:text="Richa Gurung"
+                    android:textSize="18sp"
+                    android:textColor="@color/pricegrey"
+                    android:layout_marginStart="@dimen/normaLspacing"/>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="@dimen/normaLspacing"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/normaLspacing"
+                    android:src="@drawable/ic_email"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/margin_ten"/>
+
+                <EditText
+                    android:id="@+id/getEmailTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="rchgurung@gmail.com"
+                    android:textSize="18sp"
+                    android:textColor="@color/pricegrey"
+                    android:layout_marginEnd="@dimen/normaLspacing"
+                    android:layout_marginStart="@dimen/normaLspacing"/>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:padding="@dimen/normaLspacing"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normaLspacing"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_calendar"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date Of Birth"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/margin_ten"/>
+
+                <EditText
+                    android:id="@+id/getBirthDateTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="08-09-1999"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/pricegrey"
+                    android:layout_marginEnd="@dimen/normaLspacing"
+                    android:layout_marginStart="@dimen/normaLspacing"/>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="@dimen/normaLspacing"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/normaLspacing">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normaLspacing"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_baseline_local_phone_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact No."
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/margin_ten"/>
+
+                <EditText
+                    android:id="@+id/getContactTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9806619488"
+                    android:textSize="18sp"
+                    android:textColor="@color/pricegrey"
+                    android:layout_marginEnd="@dimen/normaLspacing"
+                    android:layout_marginStart="@dimen/margin_twenty"
+                    />
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/updateTV"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginEnd="@dimen/normaLspacing"
+            android:layout_marginBottom="@dimen/normaLspacing"
+            android:layout_marginStart="@dimen/normaLspacing"
+            android:layout_marginTop="@dimen/margin_thirty"
+            android:background="@drawable/button_bg"
+            android:gravity="center"
+            android:padding="@dimen/normaLspacing"
+            android:text="UPDATE"
+            android:textColor="@color/third"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/changePasswordTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normaLspacing"
+            android:background="@drawable/button_bg"
+            android:gravity="center"
+            android:padding="@dimen/normaLspacing"
+            android:text="CHANGE PASSWORD"
+            android:textColor="@color/third"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+

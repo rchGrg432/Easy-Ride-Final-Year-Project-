@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".more.AboutUsActivity">
+
+    <ImageView
+        android:id="@+id/shopIV"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/shop"
+        />
+
+    <TextView
+        android:id="@+id/aboutus"
+        android:layout_margin="@dimen/normaLspacing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shopIV"
+        android:text="ABOUT US"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/third"/>
+
+    <TextView
+        android:id="@+id/firstP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutus"
+        android:layout_marginLeft="@dimen/normaLspacing"
+        android:layout_marginRight="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
+        android:text="For the individuals who might rather pre-plan their bicycle or bike ride, you can book one at Rentomo from your home or work and lease it out for multi-day or more."
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/secondP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstP"
+        android:layout_marginLeft="@dimen/normaLspacing"
+        android:layout_marginRight="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:text="We are America’s biggest bike rental organization, meaning to make bike leasing a problem-free business. We are settled in 150+ urban communities and we are on a development model.From bike rentals to riding gears, from selective bicycle stock to excursions and visits, from bicycle restoring and support to armada the executives framework – we have them all."/>
+
+    <TextView
+        android:id="@+id/findUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secondP"
+        android:layout_marginLeft="@dimen/normaLspacing"
+        android:layout_marginRight="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
+        android:text="You Can Find US"
+        android:textColor="@color/third"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/location"
+        android:layout_below="@+id/findUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normaLspacing"
+        android:layout_marginRight="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/location"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street 15, Lakeside, Pokhara"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/normaLspacing"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/facebook"
+        android:layout_below="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normaLspacing"
+        android:layout_marginRight="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/facebook"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.facebook.com/EasyRide"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/normaLspacing"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/normaLspacing"
+        android:layout_marginRight="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/instagram"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.instagram.com/EasyRide"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/normaLspacing"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

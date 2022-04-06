@@ -27,4 +27,9 @@
     <string name="email_key" translatable="false">ek</string>
     <string name="name_key" translatable="false">nk</string>
     <string name="created_key" translatable="false">ck</string>
+    <string name="staff_key" translatable="false">sfk</string>
+    <string name="rental_rate" translatable="false">rr</string>
+    <string name="contact" translatable="false">con</string>
+    <string name="dateofbirth" translatable="false">dob</string>
+
 </resources>

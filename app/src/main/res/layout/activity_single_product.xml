@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".singleProductPage.SingleProductActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/addToCartLL">
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        >-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,7 +42,10 @@
                     android:id="@+id/backIV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/largeSpacing"
+                    android:layout_marginStart="@dimen/largeSpacing"
+                    android:layout_marginTop="@dimen/largeSpacing"
+                    android:layout_marginEnd="@dimen/largeSpacing"
+                    android:layout_marginBottom="@dimen/largeSpacing"
                     android:elevation="10dp"
                     android:src="@drawable/ic_round_arrow_back_ios_new_24" />
 
@@ -221,9 +224,9 @@
                 android:layout_marginStart="@dimen/normaLspacing"
                 android:layout_marginTop="@dimen/margin_ten"
                 android:layout_weight="1"
-                android:text="sdfadsfads adsfadsf adsfadsf sdfadsfads adsfadsf adsfadsfsdfadsfads adsfadsf adsfadsfsdfadsfads adsfadsf adsfadsf"
+                android:text="sdfadsfads adsfadsf adsfadsf sdfadsfads adsfadsf adsfadsfsdfadsfads adsfadsf "
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -232,28 +235,28 @@
                 android:layout_marginTop="@dimen/margin_ten"
                 android:layout_weight="1"
                 android:text="Specification"
-                android:textColor="@color/pricegrey"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normaLspacing"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:layout_weight="3"
-                android:orientation="horizontal">
+                android:layout_margin="@dimen/normaLspacing">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="120dp"
                     android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp"
                     app:cardPreventCornerOverlap="true">
 
+
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cardviewbg"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <TextView
@@ -267,8 +270,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_twenty"
-                            android:text="3-5 Years"
+                            android:text="16-25 Years"
                             android:textAlignment="center"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
 
 
@@ -279,15 +283,17 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="120dp"
                     android:layout_height="100dp"
+                    android:layout_centerInParent="true"
                     android:layout_marginLeft="@dimen/margin_ten"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp"
                     app:cardPreventCornerOverlap="true">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cardviewbg"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <TextView
@@ -301,8 +307,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_twenty"
-                            android:text="3-5 Years"
+                            android:text="162 cm"
                             android:textAlignment="center"
+                            android:textColor="@color/black"
                             android:textStyle="bold" />
 
 
@@ -313,15 +320,17 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="120dp"
                     android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
                     android:layout_marginLeft="@dimen/margin_ten"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="5dp"
                     app:cardPreventCornerOverlap="true">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cardviewbg"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <TextView
@@ -335,151 +344,217 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_twenty"
-                            android:text="3-5 Years"
+                            android:text="37 cm"
                             android:textAlignment="center"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textStyle="normal" />
 
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normaLspacing"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:layout_weight="1"
-                android:text="Rental Duration"
-                android:textColor="@color/pricegrey"
-                android:textSize="16sp" />
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/normaLspacing"-->
+            <!--                android:layout_marginTop="@dimen/margin_twenty"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:text="Rental Rate"-->
+            <!--                android:textColor="@color/pricegrey"-->
+            <!--                android:textSize="16sp" />-->
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normaLspacing"
-                android:orientation="horizontal">
+
+                android:layout_margin="@dimen/normaLspacing">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="For Rent " />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" RS 200" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" / Hour" />
+                    android:text="Rental Rate "
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="145dp"
+                    android:layout_alignParentRight="true"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/minusIV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/box_shape"
-                        android:padding="@dimen/margin_five"
-                        android:src="@drawable/minus" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/rSTV"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:maxLines="2"-->
+<!--                        android:text="Rs."-->
+<!--                        android:textColor="@color/third"-->
+<!--                        android:textSize="16sp" />-->
 
                     <TextView
-                        android:id="@+id/quantityTV"
+                        android:id="@+id/rateeTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/smallSpacing"
-                        android:layout_marginEnd="@dimen/smallSpacing"
-                        android:layout_weight="1"
-                        android:text="2"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:maxLines="2"
+                        android:text="200"
+                        android:textColor="@color/third"
+                        android:textSize="16sp" />
 
-                    <ImageView
-                        android:id="@+id/plusIV"
+                    <TextView
+
+                        android:id="@+id/perhourTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/box_shape"
-                        android:padding="@dimen/margin_five"
-                        android:src="@drawable/ic_round_add_24" />
-
+                        android:layout_marginLeft="10dp"
+                        android:maxLines="2"
+                        android:text="/ per hour"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="14sp" />
                 </LinearLayout>
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_alignParentRight="true"-->
+                <!--                    android:text=" RS 200 / Hour"-->
+                <!--                    android:textColor="@color/black" />-->
 
 
-            </LinearLayout>
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginLeft="145dp"-->
+                <!--                    android:orientation="horizontal">-->
+
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/minusIV"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:background="@drawable/box_shape"-->
+                <!--                        android:padding="@dimen/margin_five"-->
+                <!--                        android:src="@drawable/minus" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/quantityTV"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginStart="@dimen/smallSpacing"-->
+                <!--                        android:layout_marginEnd="@dimen/smallSpacing"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:text="2"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textSize="18sp"-->
+                <!--                        android:textStyle="bold" />-->
+
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/plusIV"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:background="@drawable/box_shape"-->
+                <!--                        android:padding="@dimen/margin_five"-->
+                <!--                        android:src="@drawable/ic_round_add_24" />-->
+
+                <!--                </LinearLayout>-->
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/addToCartLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/normaLspacing"
+                android:background="@drawable/rectangle_box"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/normaLspacing"
+                android:text="Rent this Cycle"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/addingCartPR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/normaLspacing"
+                android:visibility="gone" />
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Rent this Cycle"-->
+            <!--                    android:textColor="@color/white"-->
+            <!--                    android:textSize="16sp" />-->
 
 
         </LinearLayout>
 
-
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/addToCartLL"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/normaLspacing"
-        android:layout_marginTop="@dimen/normaLspacing"
-        android:layout_marginEnd="@dimen/normaLspacing"
-        android:layout_marginBottom="@dimen/normaLspacing"
-        android:background="@drawable/rectangle_box"
-        android:padding="@dimen/margin_ten">
-
-        <!--        <ImageView-->
-        <!--            android:layout_width="24dp"-->
-        <!--            android:layout_height="24dp"-->
-        <!--            android:layout_marginEnd="@dimen/normaLspacing"-->
-        <!--            android:src="@drawable/ic_bag"-->
-        <!--            app:tint="@color/white" />-->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rent this Cycle"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_five"
-            android:src="@drawable/ic_baseline_arrow_forward_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text=" RS 400"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" / 2 Hours"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+<!--    </ScrollView>-->
 
 
-        <ProgressBar
-            android:id="@+id/addingCartPR"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/normaLspacing"
-            android:visibility="gone" />
 
 
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/addToCartLL"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="44dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="@dimen/normaLspacing"-->
+<!--        android:layout_marginEnd="@dimen/normaLspacing"-->
+<!--        android:layout_marginBottom="@dimen/normaLspacing"-->
+<!--        android:background="@drawable/rectangle_box"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="@dimen/margin_ten">-->
+
+<!--        &lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="24dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="24dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_marginEnd="@dimen/normaLspacing"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:src="@drawable/ic_bag"&ndash;&gt;-->
+<!--        &lt;!&ndash;            app:tint="@color/white" />&ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Rent this Cycle"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/margin_five"-->
+<!--            android:src="@drawable/ic_baseline_arrow_forward_24" />-->
+
+<!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_marginLeft="100dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text=" RS 400"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textColor="@color/white"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textSize="16sp" />&ndash;&gt;-->
+
+<!--        &lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:text=" / 2 Hours"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textColor="@color/white"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:textSize="16sp" />&ndash;&gt;-->
+
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/addingCartPR"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="@dimen/normaLspacing"-->
+<!--            android:visibility="gone" />-->
+
+
+<!--    </LinearLayout>-->
 
 
 </RelativeLayout>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.richa.easyride">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -10,16 +12,61 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EasyRideNoActionBar">
+        android:theme="@style/Theme.EasyRideNoActionBar"
+        tools:replace="android:theme"
+        >
+        <activity
+            android:name=".profile.ChangePWActivity"
+            android:exported="true" />
+        <activity
+            android:name=".checkout.OrderCompleteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".more.FAQsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".more.TandCActivity"
+            android:exported="true" />
+        <activity
+            android:name=".more.AboutUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".more.ContactUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".home.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addCycle.AddProductActivity"
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".admin.addCycle.AddCycleActivity" -->
+        <!-- android:exported="true" /> -->
+        <activity
+            android:name=".admin.cycles.ListCyclesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addCycle.SelectCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.addCategory.ListCategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".checkout.BottomDialogActivity"
+            android:exported="true" /> <!-- android:label="Your Choice" -->
+        <!-- android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth"/> -->
+        <activity
+            android:name=".checkout.CheckoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".singleProductPage.SingleProductActivity"
             android:exported="true" />
-
         <activity
             android:name=".categoryActivity.CategoryActivity"
             android:exported="true"
-            android:theme="@style/Theme.EasyRide"
-            />
+            android:theme="@style/Theme.EasyRide" />
         <activity
             android:name=".front.FrontPage"
             android:exported="true" />

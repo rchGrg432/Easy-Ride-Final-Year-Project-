@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,22 +16,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.richa.easyride.R;
 import com.richa.easyride.api.response.Cycle;
+import com.richa.easyride.api.response.CycleResponse;
 import com.richa.easyride.singleProductPage.SingleProductActivity;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Callback;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
     List<Cycle> cycleDataList;
     LayoutInflater layoutInflater;
+    List<Cycle> searchData;
     Context context;
     Boolean isCart = false;
+
 
     public  ShopAdapter(List<Cycle> cycleDataList, Context context, boolean b){
         this.cycleDataList = cycleDataList;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
+        searchData = new ArrayList<>(cycleDataList);
         this.isCart = isCart;
+
+
     }
 
     @NonNull
@@ -63,12 +74,49 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     });
 }
 
-        @Override
-        public int getItemCount(){ return  cycleDataList.size();}
+    @Override
+    public int getItemCount() {
+        return cycleDataList.size();
+    }
 
-        public class ShopViewHolder extends RecyclerView.ViewHolder{
+//        @Override
+//        public int getItemCount(){ return  cycleDataList.size();}
+
+//    @Override
+//    public Filter getFilter() {
+//        return filter;
+//    }
+
+//    private Filter filter = new Filter() {
+//        @Override
+//        protected FilterResults performFiltering(CharSequence constraint) {
+//            List<Cycle> suggestions = new ArrayList<>();
+//            if (constraint == null || constraint.length() == 0){
+//                suggestions.addAll(searchData);
+//            }else{
+//                String filterPattern = constraint.toString().toLowerCase().trim();
+//                for (Cycle item : searchData){
+//                    if (item.getCycleName().toLowerCase().contains(filterPattern)){
+//                        suggestions.add(item);
+//                    }
+//                }
+//            }
+//            FilterResults results = new FilterResults();
+//            results.values = suggestions;
+//            return results;
+//        }
+//
+//        @Override
+//        protected void publishResults(CharSequence constraint, FilterResults results) {
+//            cycleDataList.clear();
+//            cycleDataList.addAll((List) results.values);
+//            notifyDataSetChanged();
+//        }
+//    };
+
+    public class ShopViewHolder extends RecyclerView.ViewHolder{
             ImageView cycleIV;
-            LinearLayout mainLL;
+            LinearLayout mainLL, searchLayout;
             TextView cycleNameTV, rateTV, availabilityTV;
 
             public ShopViewHolder(@NonNull View  itemView){

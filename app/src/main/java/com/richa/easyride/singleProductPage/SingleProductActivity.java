@@ -2,8 +2,10 @@ package com.richa.easyride.singleProductPage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,11 +13,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.richa.easyride.R;
 import com.richa.easyride.api.ApiClient;
 import com.richa.easyride.api.response.Cycle;
 import com.richa.easyride.api.response.RegisterResponse;
 import com.richa.easyride.api.response.Slider;
+import com.richa.easyride.categoryActivity.CategoryActivity;
+import com.richa.easyride.checkout.BottomDialogActivity;
 import com.richa.easyride.cycle.SliderAdapter;
 import com.richa.easyride.utils.SharedPrefUtils;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -34,9 +39,9 @@ public class SingleProductActivity extends AppCompatActivity {
     Cycle cycle;
     SliderView imageSlider;
     ProgressBar addingCartPR;
-    ImageView backIV, plusIV, minusIV;
-    TextView name, price, desc, oldPrice, quantityTV;
-    LinearLayout addToCartLL;
+    ImageView backIV;
+    TextView name, rateeTV, desc, oldPrice, quantityTV, addToCartLL;
+//    LinearLayout addToCartLL;
     int quantity = 1;
     boolean isAdding = false;
     @Override
@@ -49,20 +54,34 @@ public class SingleProductActivity extends AppCompatActivity {
         backIV = findViewById(R.id.backIV);
         imageSlider = findViewById(R.id.imageSlider);
         name = findViewById(R.id.productNameTV);
+        rateeTV = findViewById(R.id.rateeTV);
 //        price = findViewById(R.id.productPriceTV);
         quantityTV = findViewById(R.id.quantityTV);
 //        oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
         addingCartPR = findViewById(R.id.addingCartPR);
         desc = findViewById(R.id.decTV);
-        plusIV = findViewById(R.id.plusIV);
-        minusIV = findViewById(R.id.minusIV);
+//        plusIV = findViewById(R.id.plusIV);
+//        minusIV = findViewById(R.id.minusIV);
         setOnclickListeners();
         if (getIntent().getSerializableExtra(key) != null) {
             cycle = (Cycle) getIntent().getSerializableExtra(key);
             setCycle(cycle);
         }
     }
+
+    private void setOnclickListeners() {
+        backIV.setOnClickListener(v -> finish());
+        addToCartLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), BottomDialogActivity.class);
+                intent.putExtra(BottomDialogActivity.key, cycle);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     private void setCycle(Cycle cycle) {
         setSliders(cycle.getImages());
@@ -73,10 +92,12 @@ public class SingleProductActivity extends AppCompatActivity {
 //            oldPrice.setVisibility(View.INVISIBLE);
 //
 //        } else {
-//            price.setText("Rs. " + product.getDiscountPrice());
+//            price.setText("Rs. " + cycle.getDiscountPrice());
 //            oldPrice.setText("Rs. " + product.getPrice());
 //
 //        }
+        rateeTV.setText("Rs. " + cycle.getRentalRate());
+
         desc.setText(cycle.getDescription());
 
     }
@@ -103,58 +124,70 @@ public class SingleProductActivity extends AppCompatActivity {
 
     }
 
-    private void setOnclickListeners() {
-        backIV.setOnClickListener(v -> finish());
+//    private void setOnclickListeners() {
+//        backIV.setOnClickListener(v -> finish());
+//
+////        plusIV.setOnClickListener(v -> {
+////
+////            if (quantity > 9)
+////                Toast.makeText(this, "You can only buy 10 items at once", Toast.LENGTH_SHORT).show();
+////            else
+////                quantity++;
+////
+////            setQuantity();
+////        });
+////        minusIV.setOnClickListener(v -> {
+////
+////            if (quantity < 2)
+////                Toast.makeText(this, "Quantity should be atleast 1", Toast.LENGTH_SHORT).show();
+////            else
+////                quantity--;
+////            setQuantity();
+////        });
+//
+////        addToCartLL.setOnClickListener(v -> {
+//
+//
+////            if (!isAdding) {
+////                isAdding = true;
+////                addingToggle(true);
+////                String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
+////                Call<RegisterResponse> cartCall = ApiClient.getClient().addToCart(key, cycle.getCycleId(), quantity);
+////                cartCall.enqueue(new Callback<RegisterResponse>() {
+////                    @Override
+////                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+////                        if (response.isSuccessful()) {
+////                            Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+////                        }
+////                        addingToggle(false);
+////                        isAdding = false;
+////
+////                    }
+////
+////                    @Override
+////                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+////                        addingToggle(false);
+////                        isAdding = false;
+////                    }
+////                });
+////            }
+////            else {
+////                Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
+////            }
+//
+////        });
+//
+////    addToCartLL.setOnClickListener(new View.OnClickListener() {
+////        @Override
+////        public void onClick(View v) {
+////            Intent intent = new Intent(getApplicationContext(), BottomDialogActivity.class);
+////            startActivity(intent);
+////        }
+////    });
+//    }
 
-        plusIV.setOnClickListener(v -> {
 
-            if (quantity > 9)
-                Toast.makeText(this, "You can only buy 10 items at once", Toast.LENGTH_SHORT).show();
-            else
-                quantity++;
 
-            setQuantity();
-        });
-        minusIV.setOnClickListener(v -> {
-
-            if (quantity < 2)
-                Toast.makeText(this, "Quantity should be atleast 1", Toast.LENGTH_SHORT).show();
-            else
-                quantity--;
-            setQuantity();
-        });
-
-        addToCartLL.setOnClickListener(v -> {
-
-            if (!isAdding) {
-                isAdding = true;
-                addingToggle(true);
-                String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-                Call<RegisterResponse> cartCall = ApiClient.getClient().addToCart(key, cycle.getCycleId(), quantity);
-                cartCall.enqueue(new Callback<RegisterResponse>() {
-                    @Override
-                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                        addingToggle(false);
-                        isAdding = false;
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                        addingToggle(false);
-                        isAdding = false;
-                    }
-                });
-            }
-            else {
-                Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-    }
 
     private void setQuantity() {
         quantityTV.setText(quantity + "");

@@ -49,13 +49,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == loginBtn) {
-            String email, password;
+            String email, password_hash;
             email = emailEt.getText().toString();
-            password = passwordET.getText().toString();
-            if (email.isEmpty() || password.isEmpty())
+            password_hash = passwordET.getText().toString();
+            if (email.isEmpty() || password_hash.isEmpty())
                 Toast.makeText(getContext(), "Email or Password is Empty!", Toast.LENGTH_LONG).show();
             else {
-                Call<LoginResponse> loginResponseCall = ApiClient.getClient().login(email, password);
+                Call<LoginResponse> loginResponseCall = ApiClient.getClient().login(email, password_hash);
                 loginResponseCall.enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -71,6 +71,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.email_id), loginResponse.getEmail());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.created_key), loginResponse.getCreatedAt());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.api_key), loginResponse.getApiKey());
+                                SharedPrefUtils.setString(getActivity(), getString(R.string.contact), loginResponse.getContact());
+                                SharedPrefUtils.setString(getActivity(), getString(R.string.dateofbirth), loginResponse.getDateofbirth());
+
+
+
                                 getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
                                 getActivity().finish();
                             }
