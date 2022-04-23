@@ -2,10 +2,12 @@ package com.richa.easyride.admin.cycles;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.richa.easyride.R;
@@ -31,7 +33,6 @@ public class ListCyclesActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Cycles");
-
         serverCall();
     }
 
@@ -51,7 +52,11 @@ public class ListCyclesActivity extends AppCompatActivity {
     }
 
     private void setCycleRecyclerView(List<Cycle> products) {
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
+//        GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
+//        allProductRV.setLayoutManager(layoutManager);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(gtActivity(), LinearLayoutManager.VERTICAL, false);
+//        allProductRV.setLayoutManager(layoutManager);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         allProductRV.setLayoutManager(layoutManager);
         ShopAdapterAdmin shopAdapter = new ShopAdapterAdmin(products, this);
         allProductRV.setAdapter(shopAdapter);

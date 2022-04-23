@@ -73,7 +73,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.api_key), loginResponse.getApiKey());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.contact), loginResponse.getContact());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.dateofbirth), loginResponse.getDateofbirth());
-
+                                SharedPrefUtils.setBoolean(getActivity(),  getString(R.string.staff_key), loginResponse.getIsStaff());
 
 
                                 getActivity().startActivity(new Intent(getActivity(), MainActivity.class));

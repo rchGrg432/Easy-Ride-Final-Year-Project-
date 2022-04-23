@@ -79,7 +79,7 @@
                 android:height="50dp"
                 android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Product Name"
+                android:hint="Cycle Name"
                 android:padding="@dimen/normaLspacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -92,7 +92,7 @@
                 android:height="50dp"
                 android:background="@drawable/box_shape"
                 android:backgroundTint="@color/grey"
-                android:hint="Price"
+                android:hint="Rental Rate"
                 android:padding="@dimen/normaLspacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -125,46 +125,45 @@
                 android:padding="@dimen/normaLspacing"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <EditText
-                android:inputType="number"
-                android:id="@+id/discountPriceET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:height="50dp"
-                android:background="@drawable/box_shape"
-                android:backgroundTint="@color/grey"
-                android:hint="Discount Price"
-                android:padding="@dimen/normaLspacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+<!--            <EditText-->
+<!--                android:id="@+id/availableET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normaLspacing"-->
+<!--                android:height="50dp"-->
+<!--                android:background="@drawable/box_shape"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Availability"-->
+<!--                android:padding="@dimen/normaLspacing"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
 
-            <TextView
-                android:onClick="pDateClick"
-                android:id="@+id/productionDateET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:height="50dp"
-                android:textSize="18sp"
-                android:background="@drawable/box_shape"
-                android:backgroundTint="@color/grey"
-                android:hint="Production Date"
-                android:padding="@dimen/normaLspacing"
-                tools:ignore="UsingOnClickInXml" />
+<!--            <TextView-->
+<!--                android:onClick="pDateClick"-->
+<!--                android:id="@+id/productionDateET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normaLspacing"-->
+<!--                android:height="50dp"-->
+<!--                android:textSize="18sp"-->
+<!--                android:background="@drawable/box_shape"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Production Date"-->
+<!--                android:padding="@dimen/normaLspacing"-->
+<!--                tools:ignore="UsingOnClickInXml" />-->
 
-            <EditText
-                android:textSize="18sp"
-                android:autofillHints="da"
-                android:id="@+id/expiryDateET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:height="50dp"
-                android:background="@drawable/box_shape"
-                android:backgroundTint="@color/grey"
-                android:hint="Expiry Date"
-                android:padding="@dimen/normaLspacing"
-                tools:ignore="SpeakableTextPresentCheck" />
+<!--            <EditText-->
+<!--                android:textSize="18sp"-->
+<!--                android:autofillHints="da"-->
+<!--                android:id="@+id/expiryDateET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/normaLspacing"-->
+<!--                android:height="50dp"-->
+<!--                android:background="@drawable/box_shape"-->
+<!--                android:backgroundTint="@color/grey"-->
+<!--                android:hint="Expiry Date"-->
+<!--                android:padding="@dimen/normaLspacing"-->
+<!--                tools:ignore="SpeakableTextPresentCheck" />-->
 
             <TextView
                 android:onClick="addCategory"

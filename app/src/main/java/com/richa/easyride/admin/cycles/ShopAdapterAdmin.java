@@ -24,7 +24,7 @@ public class ShopAdapterAdmin extends RecyclerView.Adapter<ShopAdapterAdmin.Shop
     LayoutInflater layoutInflater;
     Context context;
 
-    public ShopAdapterAdmin(List<Cycle> productDataList, Context context) {
+    public ShopAdapterAdmin(List<Cycle> cycleDataList, Context context) {
         this.cycleDataList = cycleDataList;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
@@ -35,7 +35,7 @@ public class ShopAdapterAdmin extends RecyclerView.Adapter<ShopAdapterAdmin.Shop
     @Override
     public ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        return new ShopViewHolder(layoutInflater.inflate(R.layout.item_cycle_admin, parent, false));
+        return new ShopViewHolder(layoutInflater.inflate(R.layout.item_product, parent, false));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class ShopAdapterAdmin extends RecyclerView.Adapter<ShopAdapterAdmin.Shop
         holder.rateTV.setText(cycleDataList.get(position).getRentalRate() + "");
         holder.availabilityTV.setText(cycleDataList.get(position).getAvailability());
         Picasso.get().load(cycleDataList.get(position).getImages().get(0)).into(holder.cycleIV);
-        holder.mainLL.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+//        holder.mainLL.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
     }
 
 

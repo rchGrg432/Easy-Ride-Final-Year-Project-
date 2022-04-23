@@ -3,8 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.richa.easyride">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- This attribute is "false" by default on apps targeting Android Q. -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +19,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyRideNoActionBar"
-        tools:replace="android:theme"
-        >
+        tools:replace="android:theme">
+        <activity
+            android:name=".home.AvailableCyclesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.cycles.ListRentalsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".checkout.Order_History_Activity"
+            android:exported="true" />
         <activity
             android:name=".profile.ChangePWActivity"
             android:exported="true" />
@@ -38,25 +52,29 @@
             android:exported="true" />
         <activity
             android:name=".admin.addCycle.AddProductActivity"
-            android:exported="true" /> <!-- <activity -->
+            android:exported="true"
+            android:theme="@style/Theme.EasyRide" /> <!-- <activity -->
         <!-- android:name=".admin.addCycle.AddCycleActivity" -->
         <!-- android:exported="true" /> -->
         <activity
             android:name=".admin.cycles.ListCyclesActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.EasyRide" />
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EasyRide" />
         <activity
             android:name=".admin.addCycle.SelectCategoryActivity"
             android:exported="true" />
         <activity
             android:name=".admin.addCategory.ListCategoryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.EasyRide" />
         <activity
             android:name=".checkout.BottomDialogActivity"
             android:exported="true" /> <!-- android:label="Your Choice" -->
         <!-- android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth"/> -->
-        <activity
-            android:name=".checkout.CheckoutActivity"
-            android:exported="true" />
         <activity
             android:name=".profile.ProfileActivity"
             android:exported="true" />
@@ -85,6 +103,16 @@
         <activity
             android:name=".home.MainActivity"
             android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovide"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

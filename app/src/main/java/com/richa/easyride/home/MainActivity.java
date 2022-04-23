@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Add menu item
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
-//        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.category));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.category));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.bicycle));
 //        bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.cart));
         bottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_baseline_dehaze_24));
@@ -52,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new HomeFragment();
                         break;
 
-//                    case 2:
-//                        //When id is 2
-//                        //Initialize home fragment
-//                        fragment = new CategoryFragment();
-//                        break;
+                    case 2:
+                        //When id is 2
+                        //Initialize home fragment
+                        fragment = new CategoryFragment();
+                        break;
 
                     case 3:
                         //When id is 2

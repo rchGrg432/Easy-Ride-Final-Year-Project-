@@ -4,6 +4,7 @@ import com.richa.easyride.api.response.CycleResponse;
 import com.richa.easyride.api.response.DashResponse;
 import com.richa.easyride.api.response.LoginResponse;
 import com.richa.easyride.api.response.RegisterResponse;
+import com.richa.easyride.api.response.RentalHistoryResponse;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -31,14 +32,17 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("api/v1/forget-password")
-    Call<RegisterResponse> forgotpassword(@Header("Apikey") String apikey, @Field("password") String password);
+    Call<RegisterResponse> forgotpassword(@Header("api_key") String apikey, @Field("password") String password);
 
     @GET("api/v1/get-all-cycle")
     Call<CycleResponse> getAllCycles();
 
+    @GET("api/v1/get-available-cycles")
+    Call<CycleResponse> getAvailableCycles();
+
     @FormUrlEncoded
     @POST("/api/v1/cart")
-    Call<RegisterResponse> addToCart(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+    Call<RegisterResponse> addToCart(@Header("api_key") String apikey, @Field("p_id") int p, @Field("quantity") int q);
 
     @GET("api/v1/get-categories")
     Call<CategoryResponse> getCategories();
@@ -47,34 +51,55 @@ public interface ApiService {
     Call<CycleResponse> getCyclesByCategory(@Query("c_id") int catID);
 
     @DELETE("/api/v1/category")
-    Call<RegisterResponse> deleteCategory(@Header("Apikey") String apikey, @Query("c_id") int catID);
+    Call<RegisterResponse> deleteCategory(@Header("api_key") String apikey, @Query("c_id") int catID);
 
+    @Multipart
     @POST("/api/v1/upload-product")
     Call<RegisterResponse> uploadProduct(
-            @Header("Apikey") String apikey,
+            @Header("api_key") String apikey,
             @Part MultipartBody.Part[] files,
             @Part("cycle_name") RequestBody cycle_name,
             @Part("rental_rate") RequestBody rental_rate,
             @Part("description") RequestBody description,
             @Part("quantity") RequestBody quantity,
-            @Part("availability") RequestBody availability,
+//            @Part("availability") RequestBody availability,
             @Part("categories") RequestBody categories
     );
 
     @GET("/api/v1/dash")
-    Call<DashResponse> getDash(@Header("Apikey") String apikey);
+    Call<DashResponse> getDash(@Header("api_key") String apikey);
 
     @Multipart
     @POST("/api/v1/upload-category")
     Call<RegisterResponse> uploadCategory(
-            @Header("Apikey") String apikey,
+            @Header("api_key") String apikey,
             @Part MultipartBody.Part file,
-            @Part("name") RequestBody name);
+            @Part("category_name") RequestBody name);
 
 
     @FormUrlEncoded
-    @POST("/api/v1/order")
-    Call<RegisterResponse> order(@Header("Apikey") String apikey,
+    @POST("/api/v1/rent")
+    Call<RegisterResponse> rent(@Header("api_key") String apikey,
+                                @Field("cycle_id") int cycleid,
+                                @Field("pickup_date") String pickupdate,
+                                @Field("total_amount") double totalamount,
+                                @Field("pay_status") String rentalstatus,
+                                @Field("pickup_time") String pickuptime,
+                                @Field("dropoff_time") String dropofftime,
                                 @Field("payment_type") int p_type,
-                                @Field("payment_status")  String paymentRefrence);
+                                @Field("payment_reference")  String paymentRefrence,
+                                @Field("image_id") String image_id);
+
+    @GET("/api/v1/rental")
+    Call<RentalHistoryResponse> getRental(@Header("api_key") String apikey);
+
+    @FormUrlEncoded
+    @POST("/api/v1/updateProfile")
+    Call<RegisterResponse> updateProfile(@Header("api_key") String apikey,
+                                         @Field("name") String names,
+                                         @Field("email") String email,
+                                         @Field("dateofbirth") String dateofbirth,
+                                         @Field("contact") String contact);
+
+
 }

@@ -47,11 +47,11 @@ public class Dash {
         this.pendingOrders = pendingOrders;
     }
 
-    public Integer getShippedOrders() {
+    public Integer getCompletedOrders() {
         return shippedOrders;
     }
 
-    public void setShippedOrders(Integer shippedOrders) {
+    public void setCompletedOrders(Integer shippedOrders) {
         this.shippedOrders = shippedOrders;
     }
 

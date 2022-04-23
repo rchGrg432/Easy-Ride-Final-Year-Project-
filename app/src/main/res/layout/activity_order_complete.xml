@@ -6,17 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".checkout.OrderCompleteActivity">
 
-
-    <TextView
-        android:id="@+id/backTV"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:drawableStart="@drawable/ic_round_close_24"
-        android:gravity="center_horizontal"
-        android:text="Rent Successfull"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:layout_margin="@dimen/normaLspacing">
+
+        <TextView
+            android:id="@+id/backTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:drawableStart="@drawable/ic_round_close_24"
+            android:gravity="center_horizontal"
+            android:text="Rent Successfull"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/image"
@@ -54,7 +67,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/descTV"
-        android:layout_margin="@dimen/normaLspacing"
+        android:layout_marginStart="@dimen/normaLspacing"
+        android:layout_marginTop="@dimen/normaLspacing"
+        android:layout_marginEnd="@dimen/normaLspacing"
+        android:layout_marginBottom="@dimen/normaLspacing"
         android:background="@drawable/rectangle_box"
         android:gravity="center_horizontal"
         android:padding="@dimen/margin_ten"

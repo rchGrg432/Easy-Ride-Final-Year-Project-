@@ -58,7 +58,7 @@ public class AddProductActivity extends AppCompatActivity {
     RAdapter iAdapter;
     RAdapter cAdapter;
     Button uploadBtn;
-    EditText productNameET, descriptionET, priceET, quantityET, discountPriceET;
+    EditText productNameET, descriptionET, priceET, quantityET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,7 @@ public class AddProductActivity extends AppCompatActivity {
         descriptionET = findViewById(R.id.descriptionET);
         priceET = findViewById(R.id.priceET);
         quantityET = findViewById(R.id.quantityET);
-        discountPriceET = findViewById(R.id.discountPriceET);
+//        availableET = findViewById(R.id.availableET);
         setImgRV();
         setCatRv();
     }
@@ -188,7 +188,7 @@ public class AddProductActivity extends AppCompatActivity {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (file != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.android.fileprovider",
+                        "com.example.android.fileprovide",
                         file);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(intent, TAKE_PICTURE);
@@ -211,7 +211,7 @@ public class AddProductActivity extends AppCompatActivity {
                 "Uploading. Please wait...", false);
         String cycle_name = productNameET.getText().toString();
         String rental_rate = priceET.getText().toString();
-        String availability = discountPriceET.getText().toString();
+//        String availability = availableET.getText().toString();
         String quantity = quantityET.getText().toString();
         String desc = descriptionET.getText().toString();
 //        String pDate = "2020-11-12";
@@ -219,7 +219,7 @@ public class AddProductActivity extends AppCompatActivity {
         String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
         RequestBody rName = RequestBody.create(MediaType.parse("text/plain"), cycle_name);
         RequestBody rRate = RequestBody.create(MediaType.parse("text/plain"), rental_rate);
-        RequestBody rAvailable = RequestBody.create(MediaType.parse("text/plain"), availability);
+//        RequestBody rAvailable = RequestBody.create(MediaType.parse("text/plain"), availability);
         RequestBody rQuantity = RequestBody.create(MediaType.parse("text/plain"), quantity);
 //        RequestBody rPD = RequestBody.create(MediaType.parse("text/plain"), pDate);
 //        RequestBody rED = RequestBody.create(MediaType.parse("text/plain"), eDate);
@@ -233,7 +233,7 @@ public class AddProductActivity extends AppCompatActivity {
         String result = cats.stream()
                 .map(n -> String.valueOf(n.getCategoryId()))
                 .collect(Collectors.joining(",", "[", "]"));
-        System.out.println(result);
+//        System.out.println(result);
         RequestBody categories = RequestBody.create(MediaType.parse("text/plain"), result);
 
         Call<RegisterResponse> responseCall = ApiClient.getClient().uploadProduct(
@@ -243,7 +243,6 @@ public class AddProductActivity extends AppCompatActivity {
                 rRate,
                 rDesc,
                 rQuantity,
-                rAvailable,
                 categories
 //                rPD,
 //                rED

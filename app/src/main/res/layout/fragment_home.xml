@@ -252,16 +252,37 @@
 
                 />
 
-
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_ten">
 
-                android:padding="@dimen/margin_ten"
-                android:text="All Cycles"
-                android:textColor="@color/bgcolor"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-                android:textSize="18sp" />
+                    android:text="Categories"
+                    android:textColor="@color/bgcolor"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/availableCyclesTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Available Cycle"
+                    android:textColor="@color/third"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:padding="@dimen/margin_ten"-->
+<!--                android:text="All Cycles"-->
+<!--                android:textColor="@color/bgcolor"-->
+
+<!--                android:textSize="18sp" />-->
 
             <RelativeLayout
                 android:layout_width="match_parent"

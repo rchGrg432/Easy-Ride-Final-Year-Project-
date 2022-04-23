@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.richa.easyride.api.response.Category;
 import com.richa.easyride.categoryActivity.CategoryActivity;
+import com.richa.easyride.utils.DataHolder;
 import com.squareup.picasso.Picasso;
 import com.richa.easyride.R;
 
@@ -57,9 +58,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.categoryItemLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(context, CategoryActivity.class);
-                intent.putExtra(CategoryActivity.CATEGORY_DATA_KEY, categories.get(holder.getAdapterPosition()));
-                context.startActivity(intent);
+                if (select) {
+                    DataHolder.category = categories.get(holder.getAdapterPosition());
+                    activity.finish();
+
+                } else {
+                    Intent intent = new Intent(context, CategoryActivity.class);
+                    intent.putExtra(CategoryActivity.CATEGORY_DATA_KEY, categories.get(holder.getAdapterPosition()));
+                    context.startActivity(intent);
+                }
             }
         });
     }

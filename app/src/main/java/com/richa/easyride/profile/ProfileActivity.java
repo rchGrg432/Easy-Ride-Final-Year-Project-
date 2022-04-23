@@ -1,35 +1,25 @@
 package com.richa.easyride.profile;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.richa.easyride.R;
-import com.richa.easyride.admin.AdminActivity;
-import com.richa.easyride.checkout.BottomDialogActivity;
+import com.richa.easyride.api.ApiClient;
+import com.richa.easyride.api.response.RegisterResponse;
 import com.richa.easyride.utils.SharedPrefUtils;
 
-import java.util.HashMap;
-import java.util.Map;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
     EditText getNameTV, getEmailTV, getBirthDateTV, getContactTV;
@@ -49,23 +39,79 @@ public class ProfileActivity extends AppCompatActivity {
         changePasswordTV = findViewById(R.id.changePasswordTV);
         updateTV = findViewById(R.id.updateTV);
 
+        getNameTV.setText(SharedPrefUtils.getString(this, getString(R.string.name_key)));
+        getEmailTV.setText(SharedPrefUtils.getString(this, getString(R.string.email_id)));
+        getBirthDateTV.setText(SharedPrefUtils.getString(this, getString(R.string.dateofbirth)));
+        getContactTV.setText(SharedPrefUtils.getString(this, getString(R.string.contact)));
+
+        gobackIV.setOnClickListener(v -> finish());
+
+        updateTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (validate()) {
+                    callResponse(getNameTV.getText().toString(), getEmailTV.getText().toString(), getBirthDateTV.getText().toString(), getContactTV.getText().toString());
+                    getNameTV.setText("");
+                    getEmailTV.setText("");
+                    getBirthDateTV.setText("");
+                    getContactTV.setText("");
+
+                }
+            }
+
+            private void callResponse(String names, String email, String dateofbirth, String contact) {
+                String key = SharedPrefUtils.getString(ProfileActivity.this, getString(R.string.api_key));
+                Call<RegisterResponse> registerResponseCall = ApiClient.getClient().updateProfile(key, names, email, dateofbirth, contact);
+
+                registerResponseCall.enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        if (response.isSuccessful()) {
+                            if (!response.body().getError()) {
+                                Toast.makeText(ProfileActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                    }
+                });
+            }
+
+
+            private boolean validate() {
+                if (getContactTV.getText().toString().length() < 10) {
+                    Toast.makeText(getApplicationContext(), "Contact number cannot be less than 10 letters", Toast.LENGTH_SHORT).show();
+                    return false;
+                } else {
+                    Toast.makeText(getApplicationContext(), "You have successfully updated your profile", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            }
+        });
+
         setOnclickListeners();
-        setGetNameTV();
 
-        ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("loading....");
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+    }
+//        setGetNameTV();
 
-        Intent i = getIntent();
-        String mName = i.getStringExtra("name");
-        String mEmail = i.getStringExtra("email");
-        String mBirthDate = i.getStringExtra("birthdate");
-        String mContact = i.getStringExtra("contact");
-
-        getNameTV.setText(mName);
-        getEmailTV.setText(mEmail);
-        getBirthDateTV.setText(mBirthDate);
-        getContactTV.setText(mContact);
+//        ProgressDialog progressDialog = new ProgressDialog(this);
+//        progressDialog.setMessage("loading....");
+//        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//
+//        Intent i = getIntent();
+//        String mName = i.getStringExtra("name");
+//        String mEmail = i.getStringExtra("email");
+//        String mBirthDate = i.getStringExtra("birthdate");
+//        String mContact = i.getStringExtra("contact");
+//
+//        getNameTV.setText(mName);
+//        getEmailTV.setText(mEmail);
+//        getBirthDateTV.setText(mBirthDate);
+//        getContactTV.setText(mContact);
 
 //        changePasswordTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -123,7 +169,7 @@ public class ProfileActivity extends AppCompatActivity {
 //            }
 //        });
 
-    }
+
 
 
 
@@ -145,11 +191,11 @@ public class ProfileActivity extends AppCompatActivity {
     });
     }
 
-    public void setGetNameTV(){
-        getNameTV.setText(SharedPrefUtils.getString(this, getString(R.string.name_key)));
-        getEmailTV.setText(SharedPrefUtils.getString(this,getString(R.string.email_id)));
-        getBirthDateTV.setText(SharedPrefUtils.getString(this,getString(R.string.dateofbirth)));
-        getContactTV.setText(SharedPrefUtils.getString(this,getString(R.string.contact)));
-
-    }
+//    public void setGetNameTV(){
+//        getNameTV.setText(SharedPrefUtils.getString(this, getString(R.string.name_key)));
+//        getEmailTV.setText(SharedPrefUtils.getString(this,getString(R.string.email_id)));
+//        getBirthDateTV.setText(SharedPrefUtils.getString(this,getString(R.string.dateofbirth)));
+//        getContactTV.setText(SharedPrefUtils.getString(this,getString(R.string.contact)));
+//
+//    }
 }

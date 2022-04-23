@@ -56,7 +56,10 @@ public class BottomDialogActivity extends AppCompatActivity {
     ImageView back, codIV, khaltiIV;
     int t1hour, t1minute, t2hour, t2minute;
     int p_type = 1;
+    String payStatus, date, pick_time, drop_time;
     String p_ref = "COD";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,8 +101,9 @@ public class BottomDialogActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         month = month+1;
-                        String date = day+"/"+month+"/"+year;
+                         date = day+"/"+month+"/"+year;
                         pickupdate.setText(date);
+
                     }
                 },year,month,day
                 );
@@ -136,6 +140,7 @@ public class BottomDialogActivity extends AppCompatActivity {
                                     );
                                     //Set selected time  on text view
                                      pickuptime.setText(f12Hours.format(date));
+                                     pick_time = f12Hours.format(date);
 
                                 } catch (ParseException e){
                                     e.printStackTrace();
@@ -159,8 +164,10 @@ public class BottomDialogActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (p_type == 1){
                     checkOut();
+
                 } else {
                     khaltiCheckOut();
+
                 }
             }
         });
@@ -229,11 +236,11 @@ public class BottomDialogActivity extends AppCompatActivity {
                                     );
                                     //Set selected time  on text view
                                     dropofftime.setText(f12Hours.format(date));
+                                    drop_time = f12Hours.format(date);
 
 //                                    Toast.makeText(BottomDialogActivity.this, , Toast.LENGTH_SHORT).show();
                                     System.out.println(timeCalculation());
                                     totalAmountTV.setText("Rs. "+cycle.getRentalRate()*timeCalculation());
-
 
                                     total = (long) (cycle.getRentalRate()*timeCalculation());
 
@@ -260,10 +267,11 @@ public class BottomDialogActivity extends AppCompatActivity {
     }
 
     private void khaltiCheckOut() {
+        payStatus = "Paid";
         Map<String, Object> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
 
-        com.khalti.checkout.helper.Config.Builder builder = new Config.Builder(Constant.pub,  cycle.getCycleId() + "",
+        com.khalti.checkout.helper.Config.Builder builder = new Config.Builder("test_public_key_b94f64c04006421d937f9e74975d8a60",  cycle.getCycleId() + "",
                 cycle.getCycleName(), total * 100,  new OnCheckOutListener() {
             @Override
             public void onError(@NonNull String action, @NonNull Map<String, String> errorMap) {
@@ -272,7 +280,26 @@ public class BottomDialogActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(@NonNull Map<String, Object> data) {
-                Log.i("success", data.toString());
+                payStatus = "Paid";
+                p_ref = "Khalti";
+                String key = SharedPrefUtils.getString(BottomDialogActivity.this, getString(R.string.api_key));
+
+                Call<RegisterResponse> orderCall = ApiClient.getClient().rent(key, cycle.getCycleId(),date,total,payStatus,pick_time,drop_time,p_type,p_ref,cycle.getImages().get(1) );
+                orderCall.enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        if (response.isSuccessful()){
+                            Intent intent = new Intent(BottomDialogActivity.this, OrderCompleteActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                    }
+                });
             }
         })
                 .paymentPreferences(new ArrayList<PaymentPreference>() {{
@@ -334,8 +361,9 @@ public class BottomDialogActivity extends AppCompatActivity {
 //    }
 
     private void checkOut(){
+        payStatus = "Pending";
         String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-        Call<RegisterResponse> orderCall = ApiClient.getClient().order(key, p_type, p_ref );
+        Call<RegisterResponse> orderCall = ApiClient.getClient().rent(key, cycle.getCycleId(),date,total,payStatus,pick_time,drop_time,p_type,p_ref,cycle.getImages().get(1) );
         orderCall.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

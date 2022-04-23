@@ -28,6 +28,7 @@ import com.richa.easyride.api.response.Category;
 import com.richa.easyride.api.response.CategoryResponse;
 import com.richa.easyride.api.response.Cycle;
 import com.richa.easyride.api.response.CycleResponse;
+import com.richa.easyride.home.AvailableCyclesActivity;
 import com.richa.easyride.home.SearchActivity;
 import com.richa.easyride.home.fragments.home.adapters.CategoryAdapter;
 import com.richa.easyride.home.fragments.home.adapters.ShopAdapter;
@@ -46,7 +47,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
-    TextView viewAllTV, userNameTV, goSearch;
+    TextView viewAllTV, userNameTV, goSearch, availableCyclesTV;
 //    ImageView profileIV;
     MeowBottomNavigation bottomNavigation;
     CircleImageView profileImage;
@@ -73,6 +74,15 @@ public class HomeFragment extends Fragment {
         profileImage = view.findViewById(R.id.profileImage);
         goSearch = view.findViewById(R.id.goSearch);
         searchLL = view.findViewById(R.id.searchLL);
+        availableCyclesTV = view.findViewById(R.id.availableCyclesTV);
+
+        availableCyclesTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AvailableCyclesActivity.class);
+                startActivity(intent);
+            }
+        });
 //        viewAllTV.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -189,6 +199,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<CycleResponse> call, Throwable t) {
                 toggleLoading(false);
+//                Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

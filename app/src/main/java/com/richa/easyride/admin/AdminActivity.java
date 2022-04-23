@@ -27,6 +27,7 @@ import com.richa.easyride.R;
 import com.richa.easyride.admin.addCategory.ListCategoryActivity;
 import com.richa.easyride.admin.addCycle.AddProductActivity;
 import com.richa.easyride.admin.cycles.ListCyclesActivity;
+import com.richa.easyride.admin.cycles.ListRentalsActivity;
 import com.richa.easyride.api.ApiClient;
 import com.richa.easyride.api.response.DashResponse;
 import com.richa.easyride.api.response.RegisterResponse;
@@ -50,7 +51,7 @@ public class AdminActivity extends AppCompatActivity {
     private static final int PICK_PICTURE = 1;
     private  static final String TEMP_DIRECT = "/CycleRent/Picture/.temp/";
     TextView pendingOrdersTV, totalOrders, shippedOrdersTV, totalCategoriesTV, totalCustomersTV, totalProductsTV;
-    LinearLayout addCategory, imageLayout, categoryList, productsLL;
+    LinearLayout addCategory, imageLayout, categoryList, productsLL, rentalsLL;
     private Uri imageUri;
     String currentPhotoPath;
     ImageView selectedIV;
@@ -60,9 +61,9 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Admin Area");
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setDisplayShowHomeEnabled(true);
+        this.getSupportActionBar().setTitle("Admin Area");
 
         findIds();
         getDash();
@@ -88,12 +89,12 @@ public class AdminActivity extends AppCompatActivity {
 //
     }
     private void setDash(com.richa.easyride.api.response.Dash dash) {
-        pendingOrdersTV.setText(dash.getPendingOrders().toString());
-        totalCategoriesTV.setText(dash.getCategories().toString());
-        totalCustomersTV.setText(dash.getCustomers().toString());
-        totalOrders.setText(dash.getProcessingOrders().toString());
-        shippedOrdersTV.setText(dash.getShippedOrders().toString());
-        totalProductsTV.setText(dash.getProducts().toString());
+//        pendingOrdersTV.setText(dash.getPendingOrders().toString());
+//        totalCategoriesTV.setText(dash.getCategories().toString());
+//        totalCustomersTV.setText(dash.getCustomers().toString());
+//        totalOrders.setText(dash.getProcessingOrders().toString());
+////        shippedOrdersTV.setText(dash.getCompletedOrders().toString());
+//        totalProductsTV.setText(dash.getProducts().toString());
 
     }
     
@@ -112,6 +113,7 @@ public class AdminActivity extends AppCompatActivity {
         addCategory = findViewById(R.id.addCategory);
         categoryList = findViewById(R.id.categoryList);
         productsLL = findViewById(R.id.productsLL);
+        rentalsLL = findViewById(R.id.rentalsLL);
         setClickListeners();
     }
 
@@ -133,6 +135,14 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminActivity.this, ListCyclesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rentalsLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, ListRentalsActivity.class);
                 startActivity(intent);
             }
         });
@@ -190,7 +200,7 @@ public class AdminActivity extends AppCompatActivity {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     if (file != null) {
                         Uri photoURI = FileProvider.getUriForFile(AdminActivity.this,
-                                "com.example.android.fileprovider",
+                                "com.example.android.fileprovide",
                                 file);
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                         startActivityForResult(intent, TAKE_PICTURE);

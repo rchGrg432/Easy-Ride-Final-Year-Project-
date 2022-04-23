@@ -8,16 +8,44 @@
     android:background="#F1F1F1"
     tools:context=".home.fragments.SettingFragment">
 
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:padding="15dp"
-        android:text="More"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:background="@color/third"
-        android:textStyle="normal"/>
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/rentalBackIV"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:src="@drawable/ic_round_arrow_back_ios_new_24" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MORE"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="10dp"-->
+<!--        android:text="More"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="24sp"-->
+<!--        android:background="@color/third"-->
+<!--        android:textStyle="normal"/>-->
 
     <View
         android:layout_width="match_parent"
@@ -51,9 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Profile"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -79,9 +106,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ride History"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -107,9 +133,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="FAQs'"
-                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -135,9 +160,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="App Privacy Policy"
-                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -163,9 +187,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Terms and Conditions"
-                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -192,9 +215,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Contact Us"
-                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp"
+                   />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -221,9 +244,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="About Us"
-                    android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -244,22 +266,20 @@
                 android:layout_marginBottom="@dimen/normaLspacing"
                 android:background="@drawable/rectangle_box"
                 android:padding="@dimen/normaLspacing"
-                android:backgroundTint="@color/third"
-                android:gravity="center">
+                android:backgroundTint="#f1f1f1">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Log Out"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
-<!--                <ImageView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignParentRight = "true"-->
-<!--                    android:src="@drawable/ic_baseline_arrow_right_24"/>-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_baseline_exit_to_app_24" />
 
 
             </RelativeLayout>
