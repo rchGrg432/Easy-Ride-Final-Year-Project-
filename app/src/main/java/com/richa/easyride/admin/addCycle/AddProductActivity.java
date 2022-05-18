@@ -211,18 +211,13 @@ public class AddProductActivity extends AppCompatActivity {
                 "Uploading. Please wait...", false);
         String cycle_name = productNameET.getText().toString();
         String rental_rate = priceET.getText().toString();
-//        String availability = availableET.getText().toString();
         String quantity = quantityET.getText().toString();
         String desc = descriptionET.getText().toString();
-//        String pDate = "2020-11-12";
-//        String eDate = "2024-10-12";
         String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
         RequestBody rName = RequestBody.create(MediaType.parse("text/plain"), cycle_name);
         RequestBody rRate = RequestBody.create(MediaType.parse("text/plain"), rental_rate);
 //        RequestBody rAvailable = RequestBody.create(MediaType.parse("text/plain"), availability);
         RequestBody rQuantity = RequestBody.create(MediaType.parse("text/plain"), quantity);
-//        RequestBody rPD = RequestBody.create(MediaType.parse("text/plain"), pDate);
-//        RequestBody rED = RequestBody.create(MediaType.parse("text/plain"), eDate);
         RequestBody rDesc = RequestBody.create(MediaType.parse("text/plain"), desc);
         MultipartBody.Part[] files = new MultipartBody.Part[photoPath.size()];
         for (int i = 0; i < photoPath.size(); i++) {

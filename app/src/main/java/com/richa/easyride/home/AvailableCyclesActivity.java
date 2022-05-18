@@ -53,7 +53,6 @@ public class AvailableCyclesActivity extends AppCompatActivity {
                     setCycleRecyclerView(response.body().getCycles());
                 }
             }
-
             @Override
             public void onFailure(Call<CycleResponse> call, Throwable t) {
                 toggleLoading(false);
@@ -62,7 +61,6 @@ public class AvailableCyclesActivity extends AppCompatActivity {
             }
         });
     }
-
     private void setCycleRecyclerView(List<Cycle> cycles) {
         availableCyclesRV.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

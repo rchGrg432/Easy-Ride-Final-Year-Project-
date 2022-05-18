@@ -45,13 +45,6 @@ public class SearchActivity extends AppCompatActivity {
         searchView = findViewById(R.id.searchView);
         food_RV = findViewById(R.id.food_RV);
         searchLL = findViewById(R.id.searchLL);
-//        backIV = findViewById(R.id.backIV);
-//        backIV.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
         searchListener();
 
         Call<CycleResponse> cycleResponseCall = ApiClient.getClient().getAllCycles();

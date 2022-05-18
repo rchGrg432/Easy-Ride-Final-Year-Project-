@@ -82,7 +82,7 @@ public class BottomDialogActivity extends AppCompatActivity {
         khaltiIV = findViewById(R.id.khaltiIV);
         checkOutLL = findViewById(R.id.checkOutLL);
 
-        cyclerateTV.setText(cycle.getRentalRate()+"");
+        cyclerateTV.setText("Rs. " + cycle.getRentalRate());
         nameTV.setText(cycle.getCycleName());
         backOnClick();
 
@@ -103,14 +103,12 @@ public class BottomDialogActivity extends AppCompatActivity {
                         month = month+1;
                          date = day+"/"+month+"/"+year;
                         pickupdate.setText(date);
-
                     }
                 },year,month,day
                 );
                 datePickerDialog.show();
             }
         });
-
         pickuptime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

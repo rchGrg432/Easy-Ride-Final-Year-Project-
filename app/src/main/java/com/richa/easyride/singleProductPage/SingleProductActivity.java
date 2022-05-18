@@ -86,20 +86,8 @@ public class SingleProductActivity extends AppCompatActivity {
     private void setCycle(Cycle cycle) {
         setSliders(cycle.getImages());
         name.setText(cycle.getCycleName());
-
-//        if (cycle.getDiscountPrice() == 0 || product.getDiscountPrice() == null) {
-//            price.setText("Rs. " + product.getPrice());
-//            oldPrice.setVisibility(View.INVISIBLE);
-//
-//        } else {
-//            price.setText("Rs. " + cycle.getDiscountPrice());
-//            oldPrice.setText("Rs. " + product.getPrice());
-//
-//        }
         rateeTV.setText("Rs. " + cycle.getRentalRate());
-
         desc.setText(cycle.getDescription());
-
     }
 
     private void setSliders(List<String> images) {
@@ -184,11 +172,7 @@ public class SingleProductActivity extends AppCompatActivity {
 ////            startActivity(intent);
 ////        }
 ////    });
-//    }
-
-
-
-
+//
     private void setQuantity() {
         quantityTV.setText(quantity + "");
     }

@@ -46,11 +46,9 @@ public class RentalFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         rentalHistoryRV = view.findViewById(R.id.rentalHistoryRV);
 //        rentalBackIV = view.findViewById(R.id.rentalBackIV);
         cycleIV = view.findViewById(R.id.cycleIV);
-
 //        rentalBackIV.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -59,8 +57,7 @@ public class RentalFragment extends Fragment {
 //
 //            private void finish() {
 //            }
-//        });
-
+//
         rentalDataCall();
     }
 
@@ -76,7 +73,6 @@ public class RentalFragment extends Fragment {
                             setRentalHistoryRV(response.body().getRentalHistory());
                         }
                     }
-
                 }
             }
 

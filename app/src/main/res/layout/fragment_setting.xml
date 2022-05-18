@@ -263,7 +263,7 @@
                 android:orientation="horizontal"
                 android:layout_marginLeft="@dimen/normaLspacing"
                 android:layout_marginRight="@dimen/normaLspacing"
-                android:layout_marginBottom="@dimen/normaLspacing"
+
                 android:background="@drawable/rectangle_box"
                 android:padding="@dimen/normaLspacing"
                 android:backgroundTint="#f1f1f1">
@@ -297,7 +297,8 @@
                 android:text="Admin Area"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:visibility="gone"/>
+                android:visibility="gone"
+                />
 
 <!--                android:id="@+id/adminAreaTV"-->
 <!--                android:layout_width="match_parent"-->

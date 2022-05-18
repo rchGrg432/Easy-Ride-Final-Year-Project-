@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/normaLspacing"
         android:background="@drawable/box_shape"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/secondary"
         android:padding="@dimen/normaLspacing">
 
         <GridLayout
@@ -34,15 +34,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="New Orders"
-                    android:textColor="@color/third" />
+                    android:text="New"
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:textStyle="bold"
                     android:id="@+id/pendingOrdersTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/third"
+                    android:textColor="@color/white"
+                    android:text="11"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -59,15 +61,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Order in Process"
-                    android:textColor="@color/pricegrey" />
+                    android:text="Process"
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalOrdersTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:text="7"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -84,15 +88,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Shipped Orders"
-                    android:textColor="@color/pricegrey" />
+                    android:text="Completed "
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/shippedOrdersTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:text="25"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -102,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:layout_marginTop="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <TextView
@@ -109,15 +116,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Total Category"
-                    android:textColor="@color/pricegrey" />
+                    android:textSize="18sp"
+                    android:text="Categories"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:textStyle="bold"
                     android:id="@+id/totalCategoriesTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:text="5"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -127,6 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:layout_marginTop="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <TextView
@@ -135,15 +145,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
                     android:text="Customers"
-                    android:textColor="@color/pricegrey" />
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalCustomersTV"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:textColor="@color/black"
+                    android:text="14"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -153,6 +164,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:layout_marginTop="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <TextView
@@ -160,15 +172,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Total Products"
-                    android:textColor="@color/pricegrey" />
+                    android:text="Total Cycles"
+                    android:textSize="18sp"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalProductsTV"
                     android:layout_width="wrap_content"
                     android:textStyle="bold"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:text="30"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -206,6 +220,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <ImageView
@@ -219,8 +235,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Add Product"
-                    android:textColor="@color/black" />
+                    android:text="Add Cycle"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -230,6 +246,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <ImageView
@@ -243,8 +261,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Products"
-                    android:textColor="@color/black" />
+                    android:text="Cycles"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -254,6 +272,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <ImageView
@@ -267,8 +287,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Orders"
-                    android:textColor="@color/black" />
+                    android:text="Rentals"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -278,6 +298,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <ImageView
@@ -292,7 +314,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
                     android:text="Categories"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -302,6 +324,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
                 android:orientation="vertical">
 
                 <ImageView
@@ -316,7 +340,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
                     android:text="Add Category"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

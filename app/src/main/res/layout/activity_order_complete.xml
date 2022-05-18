@@ -15,19 +15,13 @@
             android:id="@+id/backTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:padding="@dimen/margin_five"
             android:drawableStart="@drawable/ic_round_close_24"
             android:gravity="center_horizontal"
-            android:text="Rent Successfull"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:background="@color/third"
+            android:text="Rented Successfully"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
@@ -67,14 +61,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/descTV"
-        android:layout_marginStart="@dimen/normaLspacing"
+        android:layout_marginStart="@dimen/margin_thirty"
         android:layout_marginTop="@dimen/normaLspacing"
-        android:layout_marginEnd="@dimen/normaLspacing"
+        android:layout_marginEnd="@dimen/margin_thirty"
         android:layout_marginBottom="@dimen/normaLspacing"
         android:background="@drawable/rectangle_box"
         android:gravity="center_horizontal"
         android:padding="@dimen/margin_ten"
-        android:text="Rent More"
+        android:text="Continue"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />

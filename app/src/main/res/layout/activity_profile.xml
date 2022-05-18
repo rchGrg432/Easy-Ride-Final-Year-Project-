@@ -48,14 +48,14 @@
             android:layout_toRightOf="@id/profile_image"
             android:fontFamily="@font/poppins_medium"
             android:includeFontPadding="false"
-            android:text="Richa Gurung"
+            android:text="RIYA GURUNG"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="richa_gurung"
+            android:text="riyaaa@gmail.com"
             android:textSize="14sp"
             android:textColor="@color/white"
             android:includeFontPadding="false"

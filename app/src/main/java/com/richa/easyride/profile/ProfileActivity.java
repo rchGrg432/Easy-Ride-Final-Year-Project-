@@ -55,10 +55,8 @@ public class ProfileActivity extends AppCompatActivity {
                     getEmailTV.setText("");
                     getBirthDateTV.setText("");
                     getContactTV.setText("");
-
                 }
             }
-
             private void callResponse(String names, String email, String dateofbirth, String contact) {
                 String key = SharedPrefUtils.getString(ProfileActivity.this, getString(R.string.api_key));
                 Call<RegisterResponse> registerResponseCall = ApiClient.getClient().updateProfile(key, names, email, dateofbirth, contact);

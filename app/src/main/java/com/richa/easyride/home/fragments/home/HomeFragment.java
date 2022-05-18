@@ -47,7 +47,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
-    TextView viewAllTV, userNameTV, goSearch, availableCyclesTV;
+    TextView  userNameTV, goSearch, availableCyclesTV;
 //    ImageView profileIV;
     MeowBottomNavigation bottomNavigation;
     CircleImageView profileImage;
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
         allProductRV = view.findViewById(R.id.allProductRV);
         categoryRV = view.findViewById(R.id.categoryRV);
         loadingProgress = view.findViewById(R.id.loadingProgress);
-        viewAllTV = view.findViewById(R.id.viewAllTV);
+       // viewAllTV = view.findViewById(R.id.viewAllTV);
         userNameTV = view.findViewById(R.id.userNameTV);
         profileImage = view.findViewById(R.id.profileImage);
         goSearch = view.findViewById(R.id.goSearch);

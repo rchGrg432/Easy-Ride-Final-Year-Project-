@@ -1,6 +1,7 @@
 package com.richa.easyride.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.richa.easyride.R;
 import com.richa.easyride.api.response.Cycle;
 import com.richa.easyride.home.fragments.home.adapters.ShopAdapter;
+import com.richa.easyride.singleProductPage.SingleProductActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +45,16 @@ public class AvailableCyclesAdapter extends RecyclerView.Adapter<AvailableCycles
     @Override
     public void onBindViewHolder(@NonNull CycleViewHolder holder, int position) {
         holder.cycleNameTV.setText(cycleDataList.get(position).getCycleName());
+        holder.rateTV.setText(cycleDataList.get(position).getRentalRate()+"");
+        Picasso.get().load(cycleDataList.get(position).getImages().get(0)).into(holder.cycleIV);
+        holder.mainLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent productPage = new Intent(context, SingleProductActivity.class);
+                productPage.putExtra(SingleProductActivity.key, cycleDataList.get(holder.getAdapterPosition()));
+                context.startActivity(productPage);
+            }
+        });
     }
 
     @Override

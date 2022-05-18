@@ -79,14 +79,11 @@ public class AdminActivity extends AppCompatActivity {
                     setDash(response.body().getDash());
                 }
             }
-
-
             @Override
             public void onFailure(Call<DashResponse> call, Throwable t) {
 
             }
         });
-//
     }
     private void setDash(com.richa.easyride.api.response.Dash dash) {
 //        pendingOrdersTV.setText(dash.getPendingOrders().toString());
@@ -97,12 +94,6 @@ public class AdminActivity extends AppCompatActivity {
 //        totalProductsTV.setText(dash.getProducts().toString());
 
     }
-    
-
-
-
-
-
     private void findIds() {
         pendingOrdersTV = findViewById(R.id.pendingOrdersTV);
         totalCategoriesTV = findViewById(R.id.totalCategoriesTV);

@@ -47,7 +47,8 @@
                     android:layout_marginEnd="@dimen/largeSpacing"
                     android:layout_marginBottom="@dimen/largeSpacing"
                     android:elevation="10dp"
-                    android:src="@drawable/ic_round_arrow_back_ios_new_24" />
+                    android:src="@drawable/ic_round_arrow_back_ios_new_24"
+                    app:tint="@color/third" />
 
             </RelativeLayout>
 

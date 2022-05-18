@@ -68,6 +68,8 @@
             android:textSize="18sp"
             android:textStyle="normal" />
 
+
+
         <TextView
             android:id="@+id/cyclerateTV"
             android:layout_width="wrap_content"
@@ -507,7 +509,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="RS 500"
+            android:text=""
             android:textColor="@color/third"
             android:textSize="18sp"
             android:textStyle="bold" />
