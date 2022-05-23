@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.richa.easyride.R;
@@ -48,6 +49,7 @@ public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
     TextView  userNameTV, goSearch, availableCyclesTV;
+    SwipeRefreshLayout swipeRefresh;
 //    ImageView profileIV;
     MeowBottomNavigation bottomNavigation;
     CircleImageView profileImage;
@@ -72,9 +74,16 @@ public class HomeFragment extends Fragment {
        // viewAllTV = view.findViewById(R.id.viewAllTV);
         userNameTV = view.findViewById(R.id.userNameTV);
         profileImage = view.findViewById(R.id.profileImage);
+        swipeRefresh = view.findViewById(R.id.swipeRefresh);
         goSearch = view.findViewById(R.id.goSearch);
         searchLL = view.findViewById(R.id.searchLL);
         availableCyclesTV = view.findViewById(R.id.availableCyclesTV);
+
+        serverCall();
+        getCategoriesOnline();
+        profileOnClick();
+        getName();
+        getSearch();
 
         availableCyclesTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,17 +92,19 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-//        viewAllTV.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                bottomNavigation.show(2, true);
-//            }
-//        });
-        serverCall();
-        getCategoriesOnline();
-        profileOnClick();
-        getName();
-        getSearch();
+
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefresh.setRefreshing(true);
+                getName();
+                getCategoriesOnline();
+                serverCall();
+            }
+        });
+
+
+
 
     }
 
@@ -109,6 +120,7 @@ public class HomeFragment extends Fragment {
 
     private void getName() {
         userNameTV.setText(SharedPrefUtils.getString(getActivity(), getString(R.string.name_key)));
+        swipeRefresh.setRefreshing(false);
     }
 
     private void profileOnClick() {
@@ -126,6 +138,7 @@ public class HomeFragment extends Fragment {
         getCategories.enqueue(new Callback<CategoryResponse>() {
             @Override
             public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+                swipeRefresh.setRefreshing(false);
                 if (response.isSuccessful()) {
                     if (!response.body().getError()) {
                         DataHolder.categories = response.body().getCategories();
@@ -144,16 +157,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void showCategories(List<Category> categories) {
-//        List<Category> temp;
-//        if (categories.size() > 8) {
-//            temp = new ArrayList<>();
-//            for (int i = 0; i < 8; i++) {
-//                temp.add(categories.get(categories.size() - i - 1));
-//            }
-//
-//        } else {
-//            temp = categories;
-//        }
+
         categoryRV.setHasFixedSize(true);
         categoryRV.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         if (getActivity() != null) {
@@ -164,25 +168,6 @@ public class HomeFragment extends Fragment {
     }
 
 
-//    private void serverCall() {
-//        toggleLoading(true);
-//        Call<CycleResponse> allProductResponseCall = ApiClient.getClient().getAllProducts();
-//        allProductResponseCall.enqueue(new Callback<CycleResponse>() {
-//            @Override
-//            public void onResponse
-//                    (Call<CycleResponse> call, Response<CycleResponse> response) {
-//                toggleLoading(false);
-//                setCycleRecyclerView(response.body().getCycles());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<CycleResponse> call, Throwable t) {
-//                toggleLoading(false);
-//                Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//    }
 
     private void serverCall() {
         toggleLoading(true);
@@ -190,6 +175,7 @@ public class HomeFragment extends Fragment {
         cycleResponseCall.enqueue(new Callback<CycleResponse>() {
             @Override
             public void onResponse(Call<CycleResponse> call, Response<CycleResponse> response) {
+                swipeRefresh.setRefreshing(false);
                 if (response.isSuccessful()) {
                     toggleLoading(false);
                     setCycleRecyclerView(response.body().getCycles());

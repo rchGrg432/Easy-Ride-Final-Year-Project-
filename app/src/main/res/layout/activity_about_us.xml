@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".more.AboutUsActivity">
 
+    <RelativeLayout
+        android:id="@+id/aboutRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/shopIV"
         android:layout_width="match_parent"
@@ -14,12 +18,26 @@
         android:src="@drawable/shop"
         />
 
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/largeSpacing"
+        android:layout_marginTop="@dimen/largeSpacing"
+        android:layout_marginEnd="@dimen/largeSpacing"
+        android:layout_marginBottom="@dimen/largeSpacing"
+        android:elevation="10dp"
+        android:src="@drawable/ic_round_arrow_back_ios_new_24"
+        app:tint="@color/third" />
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/aboutus"
         android:layout_margin="@dimen/normaLspacing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/shopIV"
+        android:layout_below="@+id/aboutRL"
         android:text="ABOUT US"
         android:textStyle="bold"
         android:textSize="18sp"

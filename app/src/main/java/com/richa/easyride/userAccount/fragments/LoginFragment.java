@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.richa.easyride.R;
+import com.richa.easyride.admin.AdminActivity;
 import com.richa.easyride.api.ApiClient;
 import com.richa.easyride.api.response.LoginResponse;
 import com.richa.easyride.home.MainActivity;
@@ -60,12 +61,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                         LoginResponse loginResponse = response.body();
+//                        if (response.isSuccessful()) {
+//                            if (loginResponse.getError()) {
+//                                System.out.println("222222221222222222222 my error  is: " + loginResponse.getError());
+//                            } else {
+
                         if (response.isSuccessful()) {
-                            if (loginResponse.getError()) {
-                                System.out.println("222222221222222222222 my error  is: " + loginResponse.getError());
-                            } else {
+                            if(!response.body().getError()){
+                                Toast.makeText(getActivity(), "You'" + "re successfully logged in", Toast.LENGTH_SHORT).show();
 //                                SharedPrefUtils.setBoolean(getActivity(), getString(R.string.isLoggedKey), true);
-                                System.out.println("222222221222222222222 my api key is: " + loginResponse.getApiKey());
+//                                System.out.println("222222221222222222222 my api key is: " + loginResponse.getApiKey());
                                 SharedPrefUtils.setBoolean(getActivity(), getString(R.string.isLogged), true);
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.name_key), loginResponse.getName());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.email_id), loginResponse.getEmail());
@@ -75,9 +80,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.dateofbirth), loginResponse.getDateofbirth());
                                 SharedPrefUtils.setBoolean(getActivity(),  getString(R.string.staff_key), loginResponse.getIsStaff());
 
+                                Intent intent = new Intent(getContext(),loginResponse.getIsStaff() ? AdminActivity.class : MainActivity.class);
+                                startActivity(intent);
+//                            new Intent(getActivity(),
+                            }else{
+                                Toast.makeText(getActivity(),"Login Error", Toast.LENGTH_SHORT).show();
 
-                                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
-                                getActivity().finish();
+//                                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+//                                getActivity().finish();
                             }
 
                         }

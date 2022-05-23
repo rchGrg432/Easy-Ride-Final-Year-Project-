@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkout.Order_History_Activity"
+    tools:context=".admin.rentals.ridesOfUsers"
     android:orientation="vertical">
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,18 +17,18 @@
             android:layout_height="wrap_content"
             android:background="@color/white">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/rentalBackIV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentLeft="true"-->
-<!--                android:src="@drawable/ic_round_arrow_back_ios_new_24" />-->
+            <!--            <ImageView-->
+            <!--                android:id="@+id/rentalBackIV"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentLeft="true"-->
+            <!--                android:src="@drawable/ic_round_arrow_back_ios_new_24" />-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Your Rides"
+                android:text="Rentals"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -38,7 +39,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rentalHistoryRV"
+        android:id="@+id/ridesRV"
         android:layout_margin="@dimen/normaLspacing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

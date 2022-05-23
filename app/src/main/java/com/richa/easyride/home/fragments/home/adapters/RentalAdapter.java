@@ -31,7 +31,7 @@ public class RentalAdapter extends RecyclerView.Adapter<RentalAdapter.ViewHolder
     @NonNull
     @Override
     public RentalAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.order_history,parent,false);
+        View view = layoutInflater.inflate(R.layout.your_ride,parent,false);
          return new ViewHolder(view);
     }
 
@@ -46,7 +46,7 @@ public class RentalAdapter extends RecyclerView.Adapter<RentalAdapter.ViewHolder
         holder.pickupTimeTV.setText(rentalHistory.getPickupTime());
         holder.dropoffTimeTV.setText(rentalHistory.getDropoffTime());
         holder.paymentRefTV.setText(rentalHistory.getPaymentRefrence());
-        holder.payemntStatusTV.setText(rentalHistory.getPayStatus());
+//        holder.payemntStatusTV.setText(rentalHistory.getPayStatus());
     }
 
     @Override
@@ -66,7 +66,7 @@ public class RentalAdapter extends RecyclerView.Adapter<RentalAdapter.ViewHolder
             pickupTimeTV = view.findViewById(R.id.pickupTimeTV);
             dropoffTimeTV = view.findViewById(R.id.dropoffTimeTV);
             paymentRefTV = view.findViewById(R.id.paymentRefTV);
-            payemntStatusTV = view.findViewById(R.id.paymentStatusTV);
+//            payemntStatusTV = view.findViewById(R.id.paymentStatusTV);
 
 
         }

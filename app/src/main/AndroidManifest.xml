@@ -21,6 +21,12 @@
         android:theme="@style/Theme.EasyRideNoActionBar"
         tools:replace="android:theme">
         <activity
+            android:name=".admin.rentals.ridesOfUsers"
+            android:exported="true" />
+        <activity
+            android:name=".admin.rentals.allRentalUsers"
+            android:exported="true" />
+        <activity
             android:name=".home.AvailableCyclesActivity"
             android:exported="true" />
         <activity

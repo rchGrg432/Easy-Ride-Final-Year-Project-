@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.richa.easyride.R;
 import com.richa.easyride.admin.AdminActivity;
 import com.richa.easyride.checkout.BottomDialogActivity;
+import com.richa.easyride.more.AboutUsActivity;
 import com.richa.easyride.more.ContactUsActivity;
 import com.richa.easyride.profile.ProfileActivity;
 import com.richa.easyride.userAccount.UserAccountActivity;
@@ -50,7 +51,13 @@ public class SettingFragment extends Fragment {
     }
 
     private void loadAboutUs() {
-
+        AboutUS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutUsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadContactUs() {

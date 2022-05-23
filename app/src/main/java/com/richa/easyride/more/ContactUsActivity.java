@@ -20,7 +20,7 @@ import com.richa.easyride.R;
 
 public class ContactUsActivity extends AppCompatActivity {
     private static final int REQUEST_CALL = 1;
-    private TextView number;
+    private TextView number, emailTV;
     ImageView back;
 
     @Override
@@ -30,13 +30,28 @@ public class ContactUsActivity extends AppCompatActivity {
 
         number = findViewById(R.id.number);
         back =  findViewById(R.id.back);
+        emailTV = findViewById(R.id.emailTV);
 
         number.setPaintFlags(number.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
         backOnClick();
         setOnclickListeners();
+        clickSendEmail();
 
 
         }
+
+    private void clickSendEmail() {
+        emailTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendEmail();
+            }
+
+            private void sendEmail() {
+                startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:rchgurung@gmail.com")));
+            }
+        });
+    }
 
     private void setOnclickListeners() {
         number.setOnClickListener(new View.OnClickListener() {

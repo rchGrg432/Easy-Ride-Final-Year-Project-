@@ -67,6 +67,7 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_add_cycle2.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_add_product.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_admin.xml" value="0.4" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_all_rental_users.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_available_cycles.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_booking_fragment.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_bottom_dialog.xml" value="0.25416666666666665" />
@@ -91,6 +92,7 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_register_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_rental.xml" value="0.1" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_rides_of_users.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_search.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_select_category.xml" value="0.25052083333333336" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_single_product.xml" value="0.264" />
@@ -111,7 +113,7 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_log_in.xml" value="0.5040518638573744" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_register.xml" value="0.19537037037037036" />
-        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_rental.xml" value="0.14629629629629629" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_rental.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_wish.xml" value="0.14629629629629629" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_add_category.xml" value="0.25416666666666665" />
@@ -123,9 +125,11 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_product.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/order_history.xml" value="0.2477355072463768" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/rides.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/row_item.xml" value="0.19537037037037036" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/search_product.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/slider_item.xml" value="0.1" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/user_list.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/menu/bottom_nav.xml" value="0.1824074074074074" />
       </map>
     </option>
