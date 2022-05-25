@@ -188,22 +188,6 @@ public class BottomDialogActivity extends AppCompatActivity {
             }
         });
 
-//        dropoffdate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                DatePickerDialog datePickerDialog = new DatePickerDialog(
-//                        BottomDialogActivity.this, new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//                        month = month+1;
-//                        String date = day+"/"+month+"/"+year;
-//                        dropoffdate.setText(date);
-//                    }
-//                },year,month,day
-//                );
-//                datePickerDialog.show();
-//            }
-//        });
 
         dropofftime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -366,7 +350,7 @@ public class BottomDialogActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if (response.isSuccessful()){
-                    Intent intent = new Intent(BottomDialogActivity.this, OrderCompleteActivity.class);
+                    Intent intent = new Intent(BottomDialogActivity.this, Cash_payment_successful.class);
                     startActivity(intent);
                     finish();
                 }

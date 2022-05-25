@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/secondary"
+            android:layout_marginBottom="@dimen/margin_ten"
             android:orientation="vertical">
 <!--        <TextView-->
 <!--            android:layout_width="wrap_content"-->
@@ -51,9 +52,10 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="@color/white"
-                    android:text="Rides : "/>
+                    android:text="Order ID : "/>
 
                 <TextView
+                    android:id="@+id/noOfRidesTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
@@ -81,7 +83,7 @@
                 android:layout_marginStart="@dimen/normaLspacing"
                 android:layout_marginBottom="@dimen/normaLspacing"
                 android:background="@drawable/box_shape"
-                android:padding="5"
+                android:padding="5sp"
                 android:text="View Rides  >>>"
                 android:textColor="@color/white"
                 android:textSize="10sp" />

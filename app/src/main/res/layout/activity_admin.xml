@@ -7,209 +7,233 @@
     android:orientation="vertical"
     tools:context=".admin.AdminActivity">
 
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/secondary">-->
+
+<!--        &lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:id="@+id/rentalBackIV"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_alignParentLeft="true"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:src="@drawable/ic_round_arrow_back_ios_new_24" />&ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Admin Section"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp" />-->
+
+
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/normaLspacing"-->
+<!--        android:background="@drawable/box_shape"-->
+<!--        android:backgroundTint="@color/secondary"-->
+<!--        android:padding="@dimen/normaLspacing">-->
+
+<!--        <GridLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:columnCount="3"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:useDefaultMargins="true">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_five"-->
+<!--                    android:text="New"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:id="@+id/pendingOrdersTV"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="11"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_five"-->
+<!--                    android:text="Process"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/totalOrdersTV"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:text="7"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_five"-->
+<!--                    android:text="Completed "-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/shippedOrdersTV"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:text="25"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="@dimen/normaLspacing"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_five"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Categories"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:id="@+id/totalCategoriesTV"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="5"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="@dimen/normaLspacing"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_five"-->
+<!--                    android:text="Customers"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/totalCustomersTV"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="14"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_columnWeight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="@dimen/normaLspacing"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/margin_five"-->
+<!--                    android:text="Total Cycles"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/white" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/totalProductsTV"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:text="30"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
+<!--        </GridLayout>-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="@dimen/normaLspacing"-->
+<!--        android:layout_marginRight="@dimen/normaLspacing"-->
+<!--        android:text="Stock Management"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="16sp" />-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/normaLspacing"
-        android:background="@drawable/box_shape"
-        android:backgroundTint="@color/secondary"
+
         android:padding="@dimen/normaLspacing">
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:orientation="horizontal"
-            android:useDefaultMargins="true">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="New"
-                    android:textSize="18sp"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:textStyle="bold"
-                    android:id="@+id/pendingOrdersTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="11"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Process"
-                    android:textSize="18sp"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/totalOrdersTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="7"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Completed "
-                    android:textSize="18sp"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/shippedOrdersTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="25"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/normaLspacing"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:textSize="18sp"
-                    android:text="Categories"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:textStyle="bold"
-                    android:id="@+id/totalCategoriesTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="5"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/normaLspacing"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Customers"
-                    android:textSize="18sp"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/totalCustomersTV"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/normaLspacing"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Total Cycles"
-                    android:textSize="18sp"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/totalProductsTV"
-                    android:layout_width="wrap_content"
-                    android:textStyle="bold"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="30"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-        </GridLayout>
-
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/normaLspacing"
-        android:layout_marginRight="@dimen/normaLspacing"
-        android:text="Stock Management"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:padding="@dimen/normaLspacing">
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
+            android:columnCount="1"
             android:orientation="horizontal"
             android:useDefaultMargins="true">
 
@@ -229,91 +253,13 @@
                     android:layout_height="42dp"
                     android:layout_marginBottom="@dimen/margin_five"
                     android:src="@drawable/ic_baseline_add_circle_outline_24"
-                    app:tint="@color/third" />
+                    app:tint="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_five"
                     android:text="Add Cycle"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/productsLL"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@color/secondary"
-                android:padding="@dimen/normaLspacing"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:src="@drawable/ic_baseline_shopping_bag_24"
-                    app:tint="@color/third" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Cycles"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/rentalsLL"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@color/secondary"
-                android:padding="@dimen/normaLspacing"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:src="@drawable/ic_baseline_local_shipping_24"
-                    app:tint="@color/third" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Rentals"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/categoryList"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-                android:background="@color/secondary"
-                android:padding="@dimen/normaLspacing"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:src="@drawable/ic_baseline_category_24"
-                    app:tint="@color/third" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_five"
-                    android:text="Categories"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -333,7 +279,7 @@
                     android:layout_height="42dp"
                     android:layout_marginBottom="@dimen/margin_five"
                     android:src="@drawable/ic_baseline_add_circle_outline_24"
-                    app:tint="@color/third" />
+                    app:tint="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -343,6 +289,115 @@
                     android:textColor="@color/white" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/productsLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:src="@drawable/bicycle"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:text="Cycles"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/categoryList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:src="@drawable/ic_baseline_category_24"
+                    app:tint="@color/white"/>
+" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:text="Categories"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rentalsLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:src="@drawable/bicycle"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:text="Rentals"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/logOutLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:background="@color/secondary"
+                android:padding="@dimen/normaLspacing"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:src="@drawable/ic_baseline_exit_to_app_24"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:text="Log Out"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+
 
         </GridLayout>
 

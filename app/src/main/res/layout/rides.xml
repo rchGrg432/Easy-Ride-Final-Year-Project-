@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_ten"
         android:layout_marginStart="2dp"
         app:cardCornerRadius="15dp">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/cardviewbg"
+
             android:orientation="horizontal">
 
 <!--            <ImageView-->
@@ -49,7 +53,53 @@
 
 
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/normaLspacing"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:id="@+id/rentalUserNameTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Richa Gurung"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:text="Rental ID : "/>
+
+                        <TextView
+                            android:id="@+id/rentalIDTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:text="4"/>
+
+
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
 
 
                 <RelativeLayout
@@ -66,8 +116,7 @@
                         android:fontFamily="@font/poppins"
                         android:text="City Cycle"
                         android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textSize="14sp" />
 <!--                <LinearLayout-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
@@ -110,7 +159,7 @@
                         android:layout_marginRight="@dimen/smallSpacing"
                         android:maxLines="2"
                         android:text="11:00 AM"
-                        android:textColor="@color/pricegrey"
+                        android:textColor="@color/third"
                         android:textSize="12sp" />
 
                     <TextView
@@ -127,20 +176,21 @@
                         android:layout_marginLeft="@dimen/smallSpacing"
                         android:maxLines="2"
                         android:text=" 5:00 PM"
-                        android:textColor="@color/pricegrey"
+                        android:textColor="@color/third"
                         android:textSize="12sp" />
 
 
                 </LinearLayout>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/normaLspacing"
-                    android:background="@color/secondary"
-                    android:text="Rental Completed"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:padding="@dimen/margin_five"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/rentalCompleteTV"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="@dimen/normaLspacing"-->
+<!--                    android:background="@color/secondary"-->
+<!--                    android:text="Rental Completed"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:gravity="center"-->
+<!--                    android:padding="@dimen/margin_five"/>-->
 
 
         </LinearLayout>

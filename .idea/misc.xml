@@ -66,11 +66,12 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_add_cycle.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_add_cycle2.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_add_product.xml" value="0.25416666666666665" />
-        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_admin.xml" value="0.4" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_admin.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_all_rental_users.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_available_cycles.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_booking_fragment.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_bottom_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_cash_payment_successful.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_category.xml" value="0.1648148148148148" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_change_pwactivity.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_checkout.xml" value="0.264" />
@@ -87,8 +88,8 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_list_rentals.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_log_in_fragment.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_order_complete.xml" value="0.72" />
-        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_order_history.xml" value="0.1" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_order_complete.xml" value="0.264" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_order_history.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_register_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_rental.xml" value="0.1" />
@@ -100,6 +101,7 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_tand_cactivity.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_user_account.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/activity_wish_fragment.xml" value="0.1" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/cash_payment_successful.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/change_password.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/checkout.xml" value="0.23867753623188406" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/custom_dialog_add_category.xml" value="0.25416666666666665" />
@@ -116,7 +118,7 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_rental.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/fragment_wish.xml" value="0.14629629629629629" />
-        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_add_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_add_category.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_cart.xml" value="0.4" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_category.xml" value="0.6" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_category_no_image.xml" value="0.25416666666666665" />
@@ -125,11 +127,12 @@
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/item_product.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/order_history.xml" value="0.2477355072463768" />
-        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/rides.xml" value="0.264" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/rides.xml" value="0.4" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/row_item.xml" value="0.19537037037037036" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/search_product.xml" value="0.264" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/slider_item.xml" value="0.1" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/user_list.xml" value="0.264" />
+        <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/layout/your_ride.xml" value="0.4" />
         <entry key="..\:/college/Year 3/FYP/EasyRide/app/src/main/res/menu/bottom_nav.xml" value="0.1824074074074074" />
       </map>
     </option>

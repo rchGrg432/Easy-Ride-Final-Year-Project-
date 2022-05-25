@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.richa.easyride.R;
 import com.richa.easyride.api.ApiClient;
 import com.richa.easyride.api.response.RegisterResponse;
+import com.richa.easyride.home.fragments.home.HomeFragment;
+import com.richa.easyride.more.AboutUsActivity;
 import com.richa.easyride.utils.SharedPrefUtils;
 
 import retrofit2.Call;
@@ -23,7 +25,7 @@ import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
     EditText getNameTV, getEmailTV, getBirthDateTV, getContactTV;
-    TextView changePasswordTV, updateTV;
+    TextView changePasswordTV, updateTV, full_name, email;
     ProgressDialog progressDialog;
     ImageView gobackIV;
     @Override
@@ -38,11 +40,17 @@ public class ProfileActivity extends AppCompatActivity {
         gobackIV = findViewById(R.id.gobackIV);
         changePasswordTV = findViewById(R.id.changePasswordTV);
         updateTV = findViewById(R.id.updateTV);
+        full_name = findViewById(R.id.full_name);
+        email = findViewById(R.id.email);
 
         getNameTV.setText(SharedPrefUtils.getString(this, getString(R.string.name_key)));
         getEmailTV.setText(SharedPrefUtils.getString(this, getString(R.string.email_id)));
         getBirthDateTV.setText(SharedPrefUtils.getString(this, getString(R.string.dateofbirth)));
         getContactTV.setText(SharedPrefUtils.getString(this, getString(R.string.contact)));
+        full_name.setText(SharedPrefUtils.getString(this, getString(R.string.name_key)));
+        email.setText(SharedPrefUtils.getString(this, getString(R.string.email_id)));
+
+
 
         gobackIV.setOnClickListener(v -> finish());
 
@@ -55,6 +63,9 @@ public class ProfileActivity extends AppCompatActivity {
                     getEmailTV.setText("");
                     getBirthDateTV.setText("");
                     getContactTV.setText("");
+
+//                    Intent intent = new Intent(ProfileActivity.this, HomeFragment.class);
+//                    startActivity(intent);
                 }
             }
             private void callResponse(String names, String email, String dateofbirth, String contact) {

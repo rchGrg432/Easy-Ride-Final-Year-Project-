@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/normaLspacing">
+       >
 
         <TextView
             android:id="@+id/backTV"
@@ -19,7 +19,7 @@
             android:drawableStart="@drawable/ic_round_close_24"
             android:gravity="center_horizontal"
             android:background="@color/third"
-            android:text="Rented Successfully"
+            android:text="KHALTI"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
@@ -27,15 +27,16 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/ic_undraw_order_confirmed_re_g0if" />
+        android:src="@drawable/khalti_payment" />
 
     <TextView
         android:id="@+id/confirmTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_thirty"
         android:layout_below="@id/image"
         android:gravity="center_horizontal"
         android:text="Cycle Rented Successfully!"
@@ -43,26 +44,26 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/descTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/confirmTV"
-        android:gravity="center_horizontal"
-        android:paddingStart="@dimen/normaLspacing"
-        android:paddingEnd="@dimen/normaLspacing"
-        android:text="Sit back and relax your order will be on your door step after 2-3 working days!"
-        android:textColor="@color/pricegrey"
-        android:textSize="16sp"
-        android:textStyle="normal" />
+<!--    <TextView-->
+<!--        android:id="@+id/descTV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/confirmTV"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:paddingStart="@dimen/normaLspacing"-->
+<!--        android:paddingEnd="@dimen/normaLspacing"-->
+<!--        android:text="Sit back and relax your order will be on your door step after 2-3 working days!"-->
+<!--        android:textColor="@color/pricegrey"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="normal" />-->
 
     <TextView
         android:id="@+id/shopMoreTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/descTV"
+        android:layout_below="@id/confirmTV"
         android:layout_marginStart="@dimen/margin_thirty"
-        android:layout_marginTop="@dimen/normaLspacing"
+        android:layout_marginTop="@dimen/margin_thirty"
         android:layout_marginEnd="@dimen/margin_thirty"
         android:layout_marginBottom="@dimen/normaLspacing"
         android:background="@drawable/rectangle_box"

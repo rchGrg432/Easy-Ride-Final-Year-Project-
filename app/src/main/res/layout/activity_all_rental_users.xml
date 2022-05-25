@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.rentals.allRentalUsers"
+    tools:context=".admin.rentals.AllRentalUsers"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Your Rides"
+                android:text="List Of Users"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -38,14 +38,22 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rentalHistoryRV"
+        android:id="@+id/listOfUsersRV"
         android:layout_margin="@dimen/normaLspacing"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
         android:visibility="visible"/>
+
+    <ProgressBar
+        android:id="@+id/loadingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
 
 

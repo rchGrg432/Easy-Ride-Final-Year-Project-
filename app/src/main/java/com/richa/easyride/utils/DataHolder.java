@@ -1,5 +1,6 @@
 package com.richa.easyride.utils;
 
+import com.richa.easyride.api.response.AllRentalsResponse;
 import com.richa.easyride.api.response.Category;
 
 import java.util.List;

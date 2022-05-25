@@ -22,15 +22,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.Dash;
 import com.richa.easyride.R;
 import com.richa.easyride.admin.addCategory.ListCategoryActivity;
 import com.richa.easyride.admin.addCycle.AddProductActivity;
 import com.richa.easyride.admin.cycles.ListCyclesActivity;
-import com.richa.easyride.admin.cycles.ListRentalsActivity;
+import com.richa.easyride.admin.rentals.RidesOfUsers;
 import com.richa.easyride.api.ApiClient;
 import com.richa.easyride.api.response.DashResponse;
 import com.richa.easyride.api.response.RegisterResponse;
+import com.richa.easyride.userAccount.UserAccountActivity;
 import com.richa.easyride.utils.PermissionUtils;
 import com.richa.easyride.utils.SharedPrefUtils;
 
@@ -50,8 +50,7 @@ public class AdminActivity extends AppCompatActivity {
     private static final int TAKE_PICTURE = 2;
     private static final int PICK_PICTURE = 1;
     private  static final String TEMP_DIRECT = "/CycleRent/Picture/.temp/";
-    TextView pendingOrdersTV, totalOrders, shippedOrdersTV, totalCategoriesTV, totalCustomersTV, totalProductsTV;
-    LinearLayout addCategory, imageLayout, categoryList, productsLL, rentalsLL;
+    LinearLayout addCategory, imageLayout, categoryList, productsLL, rentalsLL, logOutLL;
     private Uri imageUri;
     String currentPhotoPath;
     ImageView selectedIV;
@@ -61,9 +60,9 @@ public class AdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setDisplayShowHomeEnabled(true);
-        this.getSupportActionBar().setTitle("Admin Area");
+        this.getSupportActionBar().setTitle("                    Admin Area");
 
         findIds();
         getDash();
@@ -95,16 +94,17 @@ public class AdminActivity extends AppCompatActivity {
 
     }
     private void findIds() {
-        pendingOrdersTV = findViewById(R.id.pendingOrdersTV);
-        totalCategoriesTV = findViewById(R.id.totalCategoriesTV);
-        totalCustomersTV = findViewById(R.id.totalCustomersTV);
-        totalOrders = findViewById(R.id.totalOrdersTV);
-        shippedOrdersTV = findViewById(R.id.shippedOrdersTV);
-        totalProductsTV = findViewById(R.id.totalProductsTV);
+//        pendingOrdersTV = findViewById(R.id.pendingOrdersTV);
+//        totalCategoriesTV = findViewById(R.id.totalCategoriesTV);
+//        totalCustomersTV = findViewById(R.id.totalCustomersTV);
+//        totalOrders = findViewById(R.id.totalOrdersTV);
+//        shippedOrdersTV = findViewById(R.id.shippedOrdersTV);
+//        totalProductsTV = findViewById(R.id.totalProductsTV);
         addCategory = findViewById(R.id.addCategory);
         categoryList = findViewById(R.id.categoryList);
         productsLL = findViewById(R.id.productsLL);
         rentalsLL = findViewById(R.id.rentalsLL);
+        logOutLL = findViewById(R.id.logOutLL);
         setClickListeners();
     }
 
@@ -133,8 +133,19 @@ public class AdminActivity extends AppCompatActivity {
         rentalsLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminActivity.this, ListRentalsActivity.class);
+                Intent intent = new Intent(AdminActivity.this, RidesOfUsers.class);
                 startActivity(intent);
+            }
+        });
+
+
+        logOutLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPrefUtils.clear(AdminActivity.this);
+                Intent userAccount = new Intent(AdminActivity.this, UserAccountActivity.class);
+                startActivity(userAccount);
+                AdminActivity.this.finish();
             }
         });
 

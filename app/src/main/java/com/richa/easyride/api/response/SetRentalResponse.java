@@ -1,14 +1,16 @@
 package com.richa.easyride.api.response;
 
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+public class SetRentalResponse {
 
-public class RentalHistoryResponse {
+
+
     @SerializedName("rental_history")
     @Expose
-    private List<RentalHistory> rentalHistory = null;
+    private List<AllRentalsResponse> rentalHistory = null;
     @SerializedName("error")
     @Expose
     private Boolean error;
@@ -16,11 +18,11 @@ public class RentalHistoryResponse {
     @Expose
     private String message;
 
-    public List<RentalHistory> getRentalHistory() {
+    public List<AllRentalsResponse> getRentalHistory() {
         return rentalHistory;
     }
 
-    public void setRentalHistory(List<RentalHistory> rentalHistory) {
+    public void setRentalHistory(List<AllRentalsResponse> rentalHistory) {
         this.rentalHistory = rentalHistory;
     }
 
@@ -39,8 +41,6 @@ public class RentalHistoryResponse {
     public void setMessage(String message) {
         this.message = message;
     }
-
-
 
 
 }

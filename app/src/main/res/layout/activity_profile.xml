@@ -53,15 +53,16 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="riyaaa@gmail.com"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:includeFontPadding="false"
-            android:layout_toRightOf="@id/profile_image"
             android:layout_below="@id/full_name"
-            android:layout_marginLeft="@dimen/margin_ten"/>
+            android:layout_marginLeft="@dimen/margin_ten"
+            android:layout_toRightOf="@id/profile_image"
+            android:includeFontPadding="false"
+            android:text="riyaaa@gmail.com"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <LinearLayout

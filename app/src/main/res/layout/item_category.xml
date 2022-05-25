@@ -49,8 +49,8 @@
                 android:layout_below="@+id/categoryCV"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="City Cycle"
                 android:gravity="center"
+                android:text="City Cycle"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 

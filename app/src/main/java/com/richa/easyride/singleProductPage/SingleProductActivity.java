@@ -112,67 +112,7 @@ public class SingleProductActivity extends AppCompatActivity {
 
     }
 
-//    private void setOnclickListeners() {
-//        backIV.setOnClickListener(v -> finish());
-//
-////        plusIV.setOnClickListener(v -> {
-////
-////            if (quantity > 9)
-////                Toast.makeText(this, "You can only buy 10 items at once", Toast.LENGTH_SHORT).show();
-////            else
-////                quantity++;
-////
-////            setQuantity();
-////        });
-////        minusIV.setOnClickListener(v -> {
-////
-////            if (quantity < 2)
-////                Toast.makeText(this, "Quantity should be atleast 1", Toast.LENGTH_SHORT).show();
-////            else
-////                quantity--;
-////            setQuantity();
-////        });
-//
-////        addToCartLL.setOnClickListener(v -> {
-//
-//
-////            if (!isAdding) {
-////                isAdding = true;
-////                addingToggle(true);
-////                String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-////                Call<RegisterResponse> cartCall = ApiClient.getClient().addToCart(key, cycle.getCycleId(), quantity);
-////                cartCall.enqueue(new Callback<RegisterResponse>() {
-////                    @Override
-////                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-////                        if (response.isSuccessful()) {
-////                            Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-////                        }
-////                        addingToggle(false);
-////                        isAdding = false;
-////
-////                    }
-////
-////                    @Override
-////                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
-////                        addingToggle(false);
-////                        isAdding = false;
-////                    }
-////                });
-////            }
-////            else {
-////                Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
-////            }
-//
-////        });
-//
-////    addToCartLL.setOnClickListener(new View.OnClickListener() {
-////        @Override
-////        public void onClick(View v) {
-////            Intent intent = new Intent(getApplicationContext(), BottomDialogActivity.class);
-////            startActivity(intent);
-////        }
-////    });
-//
+
     private void setQuantity() {
         quantityTV.setText(quantity + "");
     }

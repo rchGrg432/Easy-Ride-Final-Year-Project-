@@ -261,6 +261,7 @@ public class AddProductActivity extends AppCompatActivity {
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(AddProductActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                System.out.println(t.getLocalizedMessage());
 
             }
         });

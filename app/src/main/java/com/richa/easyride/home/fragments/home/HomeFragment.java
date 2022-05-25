@@ -1,6 +1,7 @@
 package com.richa.easyride.home.fragments.home;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,6 +80,8 @@ public class HomeFragment extends Fragment {
         searchLL = view.findViewById(R.id.searchLL);
         availableCyclesTV = view.findViewById(R.id.availableCyclesTV);
 
+        availableCyclesTV.setPaintFlags(availableCyclesTV.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
         serverCall();
         getCategoriesOnline();
         profileOnClick();
@@ -121,6 +124,7 @@ public class HomeFragment extends Fragment {
     private void getName() {
         userNameTV.setText(SharedPrefUtils.getString(getActivity(), getString(R.string.name_key)));
         swipeRefresh.setRefreshing(false);
+
     }
 
     private void profileOnClick() {
@@ -185,8 +189,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<CycleResponse> call, Throwable t) {
                 toggleLoading(false);
-//                Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+
             }
         });
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkout.Order_History_Activity"
+    tools:context=".home.fragments.RentalFragment"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout

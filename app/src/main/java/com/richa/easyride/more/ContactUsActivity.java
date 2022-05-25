@@ -32,6 +32,7 @@ public class ContactUsActivity extends AppCompatActivity {
         back =  findViewById(R.id.back);
         emailTV = findViewById(R.id.emailTV);
 
+        emailTV.setPaintFlags(emailTV.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         number.setPaintFlags(number.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
         backOnClick();
         setOnclickListeners();

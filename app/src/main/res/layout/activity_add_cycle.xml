@@ -14,71 +14,7 @@
             android:layout_margin="@dimen/normaLspacing"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cycle Image"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
 
-            <LinearLayout
-                android:id="@+id/imageLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:layout_marginTop="@dimen/normaLspacing"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:onClick="openCam"
-                    android:id="@+id/cameraIV"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/rect"
-                    android:padding="@dimen/margin_five"
-                    android:src="@drawable/ic_baseline_camera_alt_24" />
-
-                <ImageView
-                    android:onClick="openGallery"
-                    android:id="@+id/galleryIV"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="@dimen/normaLspacing"
-                    android:background="@drawable/rect"
-                    android:padding="@dimen/margin_five"
-                    android:src="@drawable/ic_baseline_image_24" />
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center_vertical"-->
-<!--                    android:layout_marginLeft="@dimen/normaLspacing"-->
-<!--                    android:text="Add Image"-->
-<!--                    android:textColor="@color/black" />-->
-
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/imageRv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:background="@drawable/box_shape"
-                android:backgroundTint="#f1f1f1"
-                />
-
-
-            <ImageView
-                android:id="@+id/selectedIV"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:scaleType="centerCrop"
-                android:visibility="gone" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +31,6 @@
                 android:layout_marginBottom="@dimen/normaLspacing"
                 android:height="50dp"
                 android:background="@drawable/box_shape"
-                android:backgroundTint="#f1f1f1"
                 android:hint="Cycle Name"
                 android:padding="@dimen/normaLspacing"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -115,33 +50,10 @@
                 android:layout_marginBottom="@dimen/normaLspacing"
                 android:height="50dp"
                 android:background="@drawable/box_shape"
-                android:backgroundTint="#f1f1f1"
                 android:hint="Rental Rate"
                 android:padding="@dimen/normaLspacing"
                 tools:ignore="SpeakableTextPresentCheck" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="@dimen/margin_five"
-                android:textColor="@color/black"/>
-            <EditText
-                android:id="@+id/descriptionET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/normaLspacing"
-                android:background="@drawable/box_shape"
-                android:backgroundTint="#f1f1f1"
-                android:hint="Description"
-                android:padding="@dimen/normaLspacing"
-                android:gravity="top|left"
-                android:inputType="textEmailAddress|textMultiLine"
-                android:lines="20"
-                android:minLines="9"
-                android:scrollHorizontally="false"
-                android:scrollbars="vertical" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,10 +70,33 @@
                 android:layout_marginBottom="@dimen/normaLspacing"
                 android:height="50dp"
                 android:background="@drawable/box_shape"
-                android:backgroundTint="#f1f1f1"
                 android:hint="Quantity"
                 android:padding="@dimen/normaLspacing"
                 tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/margin_five"
+                android:textColor="@color/black"/>
+            <EditText
+                android:id="@+id/descriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="@dimen/normaLspacing"
+                android:background="@drawable/box_shape"
+                android:hint="Description"
+                android:padding="@dimen/normaLspacing"
+                android:gravity="top|left"
+                android:inputType="textEmailAddress|textMultiLine"
+                android:lines="20"
+                android:minLines="9"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical" />
+
 
 <!--            <EditText-->
 <!--                android:id="@+id/availableET"-->
@@ -224,6 +159,72 @@
 
                 android:padding="@dimen/margin_five"
                 />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cycle Image"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:id="@+id/imageLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normaLspacing"
+                android:layout_marginTop="@dimen/normaLspacing"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:onClick="openCam"
+                    android:id="@+id/cameraIV"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/rect"
+                    android:padding="@dimen/margin_five"
+                    android:src="@drawable/ic_baseline_camera_alt_24" />
+
+                <ImageView
+                    android:onClick="openGallery"
+                    android:id="@+id/galleryIV"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="@dimen/normaLspacing"
+                    android:background="@drawable/rect"
+                    android:padding="@dimen/margin_five"
+                    android:src="@drawable/ic_baseline_image_24" />
+
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center_vertical"-->
+                <!--                    android:layout_marginLeft="@dimen/normaLspacing"-->
+                <!--                    android:text="Add Image"-->
+                <!--                    android:textColor="@color/black" />-->
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imageRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/normaLspacing"
+                android:background="@drawable/box_shape"
+                android:backgroundTint="#f1f1f1"
+                />
+
+
+            <ImageView
+                android:id="@+id/selectedIV"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/normaLspacing"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
 
 
             <Button
